@@ -299,10 +299,13 @@
       const usable = /script\.google\.com/.test(FORM_ENDPOINT) || /formspree|zapier|make\.com|hooks/.test(FORM_ENDPOINT);
       try {
         if (usable) {
-          await fetch(FORM_ENDPOINT, { method: 'POST', mode: 'no-cors', body: new URLSearchParams(d) });
+          const ctrl = new AbortController();
+          const t = setTimeout(() => ctrl.abort(), 8000);
+          await fetch(FORM_ENDPOINT, { method: 'POST', mode: 'no-cors', body: new URLSearchParams(d), signal: ctrl.signal });
+          clearTimeout(t);
         }
         if (window.fbq) { fbq('track', 'Lead'); }
-      } catch (err) { /* vẫn hiển thị cảm ơn để không mất khách */ }
+      } catch (err) { /* vẫn hiển thị cảm ơn để không mất khách, kể cả khi timeout */ }
 
       const wrapEl = document.getElementById('formInner');
       const n = selected.size;
