@@ -268,10 +268,6 @@ section{position:relative;padding:8rem var(--pad)}
 .ring-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease)}
 .ring-card:hover .ring-thumb img{transform:scale(1.06)}
 .ring-tag{position:absolute;top:.9rem;left:.9rem;background:rgba(27,36,21,.82);color:var(--gold-bright);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;padding:.34rem .8rem;font-weight:300}
-.ring-check{position:absolute;top:.8rem;right:.8rem;width:32px;height:32px;border-radius:50%;background:rgba(251,248,241,.94);border:1px solid var(--line);display:grid;place-items:center;transition:.25s}
-.ring-check svg{width:15px;height:15px;stroke:#fff;opacity:0;transition:.2s}
-.ring-card.selected .ring-check{background:var(--forest);border-color:var(--forest)}
-.ring-card.selected .ring-check svg{opacity:1}
 .ring-body{padding:1.5rem 1.5rem 1.6rem;display:flex;flex-direction:column;flex:1}
 .ring-body .meta{font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem;font-weight:500}
 .ring-body h3{font-size:1.65rem;color:var(--forest);line-height:1.06;font-weight:400}

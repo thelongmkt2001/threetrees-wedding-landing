@@ -39,8 +39,6 @@
      desc:"Cùng ngôn ngữ thiết kế tổng thể nhưng khác nhau ở chi tiết — một chiếc giữ vẻ đẹp tối giản của kim loại, chiếc còn lại điểm xuyết kim cương trên chính những đường nét ấy. Kể cả khi hai tâm hồn trở thành một, mỗi người vẫn tỏa sáng theo cách riêng."}
   ];
 
-  const CHECK = '<svg viewBox="0 0 24 24" fill="none" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>';
-
   /* ---- loader ---- */
   const hideLoader = () => { const l = document.getElementById('loader'); if (l) l.classList.add('done'); };
   window.addEventListener('load', () => setTimeout(hideLoader, 500));
@@ -82,7 +80,6 @@
       card.innerHTML =
         '<div class="ring-thumb">' +
           '<span class="ring-tag">' + r.metal + '</span>' +
-          '<div class="ring-check">' + CHECK + '</div>' +
           '<img src="' + r.img + '" alt="Nhẫn cưới ' + r.name + '" loading="lazy" />' +
         '</div>' +
         '<div class="ring-body">' +
