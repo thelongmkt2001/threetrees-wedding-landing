@@ -36,7 +36,9 @@
     {id:"chung-ta", name:"Chúng Ta Thuộc Về Nhau", metal:"Vàng trắng", essence:"Lời hứa chỉ hai người hiểu", img:"assets/rings/chung-ta.jpg",
      desc:"Một cặp nhẫn với vẻ ngoài tối giản, ẩn chứa bên trong một lời hứa. Những dòng chữ khắc bên trong không dành cho thế giới nhìn thấy — chúng chỉ tồn tại cho hai người, mỗi lần nhìn nhẫn là một lần nhớ về lý do đã chọn nhau."},
     {id:"the-shape-of-us", name:"The Shape Of Us", metal:"Vàng trắng · Kim cương", essence:"Hai bản thể, một hành trình", img:"assets/rings/the-shape-of-us.jpg",
-     desc:"Cùng ngôn ngữ thiết kế tổng thể nhưng khác nhau ở chi tiết — một chiếc giữ vẻ đẹp tối giản của kim loại, chiếc còn lại điểm xuyết kim cương trên chính những đường nét ấy. Kể cả khi hai tâm hồn trở thành một, mỗi người vẫn tỏa sáng theo cách riêng."}
+     desc:"Cùng ngôn ngữ thiết kế tổng thể nhưng khác nhau ở chi tiết — một chiếc giữ vẻ đẹp tối giản của kim loại, chiếc còn lại điểm xuyết kim cương trên chính những đường nét ấy. Kể cả khi hai tâm hồn trở thành một, mỗi người vẫn tỏa sáng theo cách riêng."},
+    {id:"loi-ve", name:"Lối Về", metal:"Vàng hồng 18K", essence:"Không giữ nhau, nhưng luôn có nhau", img:"assets/rings/loi-ve.jpg",
+     desc:"Có những tình yêu không giữ chặt, mà vẫn chẳng bao giờ rời xa. Nhẫn nam giữ vẻ tối giản với bề mặt xước mờ, lòng nhẫn khắc chìm họa tiết lá — bản in tiết chế của nhẫn nữ. Nhẫn nữ là những chiếc lá vàng hồng ôm lấy từng viên kim cương như giọt sương đọng lại, sắp xếp tự nhiên, không theo quy tắc cố định. Em tỏa sáng theo cách của riêng mình — nhưng trong lòng anh, vẫn luôn có một khoảng dành riêng cho em."}
   ];
 
   /* ---- loader ---- */
@@ -79,7 +81,7 @@
   const selected = new Set();
   const grid = document.getElementById('ringGrid');
   if (grid) {
-    RINGS.forEach(r => {
+    RINGS.filter(r => r.id !== 'loi-ve').forEach(r => {
       const card = document.createElement('div');
       card.className = 'ring-card';
       card.dataset.id = r.id;
@@ -351,7 +353,8 @@
     'threetrees':       { style: 'hien-dai', metal: 'hong',  value: 'ca-tinh' },
     'again-again':      { style: 'toi-gian', metal: 'hong',  value: 'binh-di' },
     'chung-ta':         { style: 'toi-gian', metal: 'trang', value: 'ben-vung' },
-    'the-shape-of-us':  { style: 'hien-dai', metal: 'trang', value: 'ca-tinh' }
+    'the-shape-of-us':  { style: 'hien-dai', metal: 'trang', value: 'ca-tinh' },
+    'loi-ve':           { style: 'toi-gian', metal: 'hong',  value: 'ben-vung' }
   };
   const quizCard = document.querySelector('.quiz-card');
   if (quizCard) {

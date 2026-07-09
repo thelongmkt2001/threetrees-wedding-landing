@@ -201,14 +201,18 @@ section{position:relative;padding:8rem var(--pad)}
 .marquee-track b{color:var(--gold);font-size:.55rem;transform:translateY(-2px)}
 @keyframes marq{to{transform:translateX(-50%)}}
 
-/* ---------- manifesto ---------- */
-.manifesto{text-align:center;background:var(--paper);padding:8.5rem var(--pad)}
-.manifesto .wrap{max-width:1000px;margin-inline:auto}
-.manifesto-eyebrow{margin-bottom:2.2rem;display:inline-block}
-.manifesto-text{font-size:clamp(1.8rem,4.4vw,3.4rem);line-height:1.26;font-weight:400;color:var(--forest)}
-.manifesto-text em{font-style:italic}
-.manifesto-note{max-width:620px;margin:2.6rem auto 0;color:var(--ink-soft);font-size:1.02rem;line-height:1.9}
-.manifesto-sign{margin-top:2rem;font-family:var(--serif);font-style:italic;font-size:1.2rem;color:var(--gold-text)}
+/* ---------- spotlight ---------- */
+.spotlight{background:var(--cream);border-top:1px solid var(--line-gold);border-bottom:1px solid var(--line-gold)}
+.spotlight-grid{display:grid;grid-template-columns:1fr 1.08fr;gap:5rem;align-items:start}
+.spotlight-media.feat-media .shot img{aspect-ratio:4/4.3}
+.spotlight-metal{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-text);font-weight:500;margin-top:1.1rem}
+.spotlight-name{font-family:var(--display);font-size:clamp(2.6rem,4.6vw,4rem);color:var(--forest);line-height:1.02;margin:.4rem 0 .5rem}
+.spotlight-essence{font-family:var(--serif);font-style:italic;font-size:1.4rem;color:var(--gold-text);margin-bottom:1.8rem}
+.spotlight-poem{border:0;padding:0;margin:0 0 1.6rem}
+.spotlight-poem p{font-family:var(--serif);font-style:italic;font-size:1.14rem;line-height:1.55;color:var(--forest);margin-bottom:1.1rem}
+.spotlight-poem-close{color:var(--gold-text)!important;font-weight:500}
+.spotlight-concept{font-size:.96rem;color:var(--ink-soft);padding-top:1.4rem;border-top:1px solid var(--line);margin-bottom:2rem;max-width:480px}
+.spotlight-cta{display:flex;flex-wrap:wrap;gap:1rem}
 
 /* ---------- maison / heritage ---------- */
 .maison{background:var(--ivory)}
@@ -226,8 +230,7 @@ section{position:relative;padding:8rem var(--pad)}
 .stats span{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);margin-top:.9rem}
 
 /* ---------- house codes / usp ---------- */
-.codes{background:var(--cream);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.codes-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.codes-grid{display:grid;grid-template-columns:repeat(4,1fr);margin-top:5rem;padding-top:4.4rem;border-top:1px solid var(--line)}
 .code{padding:.4rem 2rem 0 0}
 .code+.code{padding-left:2rem;border-left:1px solid var(--line)}
 .code-ic{width:52px;height:52px;border:1px solid var(--line-gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);margin-bottom:1.3rem}
@@ -354,9 +357,8 @@ section{position:relative;padding:8rem var(--pad)}
 .timeline p{color:var(--ink-soft);font-size:.95rem;max-width:480px}
 
 /* ---------- craftsmanship ---------- */
-.craft{background:var(--forest);color:var(--bone)}
-.craft .sec-head h2{color:var(--bone)}
-.craft .sec-head p{color:var(--bone-dim)}
+.atelier-craft{margin-top:5rem;padding-top:4.4rem;border-top:1px solid var(--line)}
+.atelier-craft .sec-index{display:block;margin-bottom:1.6rem}
 .craft-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
 .craft-card{position:relative;overflow:hidden}
 .craft-card img{width:100%;aspect-ratio:3/3.6;object-fit:cover;transition:transform 1.2s var(--ease)}
@@ -560,21 +562,24 @@ section{position:relative;padding:8rem var(--pad)}
   .hero-cta .btn{width:100%}
   .sec-head{margin-bottom:2rem}
   .marquee-track span{font-size:1.15rem}
-  .manifesto{padding:3.6rem var(--pad)}
-  .manifesto-eyebrow{margin-bottom:1.4rem}
-  .manifesto-text{font-size:clamp(1.2rem,4.6vw,1.5rem);line-height:1.5}
-  .manifesto-note{margin-top:1.6rem;font-size:.94rem;line-height:1.75}
-  .manifesto-sign{margin-top:1.4rem}
+  .spotlight-grid{grid-template-columns:1fr;gap:1.6rem}
+  .spotlight-media.feat-media .shot img{aspect-ratio:4/3.5}
+  .spotlight-name{font-size:clamp(2.2rem,7vw,2.8rem);margin:.3rem 0 .4rem}
+  .spotlight-essence{font-size:1.15rem;margin-bottom:1.2rem}
+  .spotlight-poem{margin-bottom:1.2rem}
+  .spotlight-poem p{font-size:1.02rem;margin-bottom:.85rem}
+  .spotlight-concept{padding-top:1.1rem;margin-bottom:1.5rem}
   .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem .8rem;margin-top:2rem}
   .stats strong{font-size:2rem}
   .stats span{font-size:.56rem;letter-spacing:.08em;margin-top:.6rem}
-  .codes-grid{grid-template-columns:1fr}
+  .codes-grid{grid-template-columns:1fr;margin-top:2.8rem;padding-top:2.4rem}
   .code,.code:nth-child(even),.code:nth-child(odd){padding:1.6rem 0 0;border-left:0}
   .code:nth-child(n+2){margin-top:0;border-top:1px solid var(--line)}
   .code:first-child{border-top:0;padding-top:.4rem}
   .code-ic{width:44px;height:44px;margin-bottom:1rem}
   .code-ic svg{width:19px;height:19px}
   .code h3{margin:.5rem 0 .5rem}
+  .atelier-craft{margin-top:2.8rem;padding-top:2.4rem}
   .craft-grid{grid-template-columns:1fr;gap:1.1rem}
   .craft-card img{aspect-ratio:16/11}
   .craft-card .cap{padding:1.8rem 1.4rem 1.3rem}
