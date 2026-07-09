@@ -558,7 +558,7 @@ section{position:relative;padding:8rem var(--pad)}
 @media (max-width:760px){
   :root{--pad:6.5vw}
   html{scroll-padding-top:70px}
-  section{padding:3.8rem var(--pad)}
+  section{padding:3.1rem var(--pad)}
   .topbar .wrap{padding:.55rem var(--pad)}
   .nav{padding:1.1rem var(--pad)}
   .nav.scrolled{padding:.8rem var(--pad)}
@@ -637,16 +637,21 @@ section{position:relative;padding:8rem var(--pad)}
   body{padding-bottom:72px}
 }
 @media (max-width:520px){
-  section{padding:3.2rem var(--pad)}
+  section{padding:2.7rem var(--pad)}
+  .sec-head{margin-bottom:1.6rem}
   .sec-head h2{font-size:clamp(1.8rem,7.4vw,2.3rem)}
-  .sec-head p{font-size:.98rem}
-  .ring-grid{grid-template-columns:1fr;gap:1.1rem}
-  .ring-thumb{aspect-ratio:4/3.3}
-  .ring-body{padding:1.15rem 1.3rem 1.3rem}
-  .ring-body h3{font-size:1.4rem}
-  .ring-body .essence{font-size:.98rem;margin:.15rem 0 .5rem}
-  .ring-body p{font-size:.85rem;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-  .ring-select{margin-top:1rem;padding:.75rem}
+  .sec-head p{font-size:.94rem;margin-top:.7rem}
+  .ring-grid{grid-template-columns:1fr 1fr;gap:.7rem}
+  .ring-thumb{aspect-ratio:1/1}
+  .ring-tag{top:.5rem;left:.5rem;font-size:.5rem;letter-spacing:.06em;padding:.24rem .5rem}
+  .ring-body{padding:.75rem .8rem .85rem}
+  .ring-body .meta{font-size:.5rem;letter-spacing:.1em;margin-bottom:.28rem}
+  .ring-body h3{font-size:1.08rem;line-height:1.04}
+  .ring-body .essence{display:none}
+  .ring-body p{display:none}
+  .ring-select{margin-top:.7rem;padding:.5rem;font-size:.52rem;letter-spacing:.08em;gap:.25rem}
+  .ring-select .lbl{display:none}
+  .ring-select .plus{font-size:.9rem}
   .fld2{grid-template-columns:1fr;gap:1.2rem}
   .feat-text h3{font-size:1.9rem}
   .feat-no{font-size:2.1rem}
