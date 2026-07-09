@@ -61,15 +61,21 @@
 
 <!-- drawer -->
 <div class="drawer" id="drawer" aria-hidden="true">
-  <div class="drawer-links">
-    <a href="#featured"><i>01</i> Yêu thích nhất</a>
-    <a href="#collection"><i>02</i> Bộ sưu tập</a>
-    <a href="#atelier"><i>03</i> Chế tác</a>
-    <a href="#privilege"><i>04</i> Đặc quyền</a>
-    <a href="#form"><i>05</i> Đặt lịch tư vấn</a>
-    <a href="#showroom"><i>06</i> Liên hệ</a>
+  <div class="drawer-top">
+    <span class="drawer-brand"><b>ThreeTrees</b><i>Wedding · Memory-Crafted</i></span>
   </div>
-  <div class="drawer-foot">15 Nhà Thờ, Hoàn Kiếm, Hà Nội · 0862.760.663</div>
+  <nav class="drawer-links">
+    <a href="#featured"><i>01</i><span>Yêu thích nhất</span></a>
+    <a href="#collection"><i>02</i><span>Bộ sưu tập</span></a>
+    <a href="#atelier"><i>03</i><span>Chế tác</span></a>
+    <a href="#privilege"><i>04</i><span>Đặc quyền</span></a>
+    <a href="#showroom"><i>05</i><span>Liên hệ</span></a>
+  </nav>
+  <div class="drawer-foot">
+    <a href="#form" class="btn btn-gold full"><span>Đặt lịch tư vấn</span></a>
+    <a href="tel:0862760663" class="drawer-phone">☎ 0862.760.663</a>
+    <span class="drawer-addr">15 Nhà Thờ, Hoàn Kiếm, Hà Nội</span>
+  </div>
 </div>
 
 <!-- hero -->
@@ -228,45 +234,6 @@
         <p>Một cặp nhẫn cùng ngôn ngữ thiết kế tổng thể nhưng khác nhau ở chi tiết — cách ThreeTrees thể hiện niềm tin rằng những người yêu nhau luôn nhận ra hình bóng của mình trong đối phương. Một chiếc giữ vẻ đẹp tối giản của kim loại, chiếc còn lại được điểm xuyết kim cương trên chính những đường nét ấy. Kể cả khi hai tâm hồn trở thành một, mỗi người vẫn tỏa sáng theo cách riêng.</p>
         <div class="feat-select"><button type="button" class="sbtn" data-add="the-shape-of-us" aria-pressed="false"><span class="i">+</span> <span class="l">Thêm vào buổi tư vấn</span></button></div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- quiz — gợi ý mẫu -->
-<section class="quiz" id="quiz">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <span class="eyebrow">Gợi ý riêng</span>
-      <h2>Chưa biết bắt đầu từ <span class="gold">đâu?</span></h2>
-      <p>Trả lời ba câu ngắn — chúng tôi gợi ý những mẫu hợp với câu chuyện của hai bạn, rồi tự đưa vào phần đăng ký tư vấn.</p>
-    </div>
-    <div class="quiz-card rv">
-      <div class="quiz-q" data-q="style">
-        <span class="quiz-label">01 · Phong cách của hai bạn</span>
-        <div class="quiz-opts">
-          <button type="button" data-v="toi-gian">Tối giản, tinh tế</button>
-          <button type="button" data-v="co-dien">Cổ điển, sâu lắng</button>
-          <button type="button" data-v="hien-dai">Hiện đại, nổi bật</button>
-        </div>
-      </div>
-      <div class="quiz-q" data-q="metal">
-        <span class="quiz-label">02 · Chất liệu bạn yêu thích</span>
-        <div class="quiz-opts">
-          <button type="button" data-v="trang">Vàng trắng</button>
-          <button type="button" data-v="hong">Vàng hồng</button>
-          <button type="button" data-v="vang">Vàng vàng</button>
-        </div>
-      </div>
-      <div class="quiz-q" data-q="value">
-        <span class="quiz-label">03 · Điều hai bạn muốn lưu giữ</span>
-        <div class="quiz-opts">
-          <button type="button" data-v="ben-vung">Sự bền vững</button>
-          <button type="button" data-v="binh-di">Những điều bình dị</button>
-          <button type="button" data-v="ca-tinh">Cá tính riêng</button>
-        </div>
-      </div>
-      <button type="button" class="btn btn-solid quiz-submit" id="quizSubmit" disabled><span>Xem mẫu gợi ý</span></button>
-      <div class="quiz-result" id="quizResult"></div>
     </div>
   </div>
 </section>
