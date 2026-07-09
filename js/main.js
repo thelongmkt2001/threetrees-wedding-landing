@@ -351,13 +351,24 @@
       }).sort((a, b) => b.s - a.s).slice(0, 3);
       const res = document.getElementById('quizResult');
       res.innerHTML =
-        '<div class="qr-head">Gợi ý dành cho hai bạn</div>' +
-        '<div class="qr-grid">' + scored.map(o =>
-          '<div class="qr-item">' +
-            '<div class="qr-img"><img src="' + o.r.img + '" alt="Nhẫn ' + o.r.name + '" loading="lazy" /></div>' +
-            '<div class="qr-info"><b>' + o.r.name + '</b><span>' + o.r.essence + '</span>' +
-            '<button type="button" class="qr-add" data-add="' + o.r.id + '"><span class="i">+</span> <span class="l">Thêm vào buổi tư vấn</span></button></div>' +
+        '<span class="qr-eyebrow">Dựa trên câu trả lời của hai bạn</span>' +
+        '<div class="qr-head">Gợi ý dành riêng cho hai bạn</div>' +
+        '<div class="qr-grid">' + scored.map((o, i) =>
+          '<div class="qr-item' + (i === 0 ? ' best' : '') + '">' +
+            '<div class="qr-img">' +
+              (i === 0 ? '<span class="qr-best">★ Phù hợp nhất</span>' : '') +
+              '<span class="qr-tag">' + o.r.metal + '</span>' +
+              '<img src="' + o.r.img + '" alt="Nhẫn ' + o.r.name + '" loading="lazy" />' +
+            '</div>' +
+            '<div class="qr-info">' +
+              '<span class="qr-no">Gợi ý 0' + (i + 1) + '</span>' +
+              '<b>' + o.r.name + '</b>' +
+              '<span class="qr-essence">' + o.r.essence + '</span>' +
+              '<p class="qr-desc">' + o.r.desc + '</p>' +
+              '<button type="button" class="qr-add" data-add="' + o.r.id + '"><span class="i">+</span> <span class="l">Thêm vào buổi tư vấn</span></button>' +
+            '</div>' +
           '</div>').join('') + '</div>' +
+        '<div class="qr-hint">← Vuốt để xem các mẫu khác →</div>' +
         '<a href="#collection" class="qr-all">Xem toàn bộ bộ sưu tập →</a>';
       res.classList.add('show');
       res.querySelectorAll('[data-add]').forEach(btn => btn.addEventListener('click', (e) => { e.stopPropagation(); toggle(btn.dataset.add); }));
