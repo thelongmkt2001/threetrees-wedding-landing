@@ -231,18 +231,19 @@ section{position:relative;padding:8rem var(--pad)}
 
 /* ---------- maison / heritage ---------- */
 .maison{background:var(--ivory)}
-.maison-grid{display:grid;grid-template-columns:.88fr 1fr;gap:5rem;align-items:center}
-.maison-figure{position:relative;overflow:hidden;padding:15px;background:var(--paper);box-shadow:var(--shadow-soft)}
-.maison-figure img{width:100%;aspect-ratio:3/3.6;object-fit:cover;transition:filter 1.4s var(--ease);filter:contrast(1.02)}
-.maison-figure:hover img{filter:contrast(1.04) brightness(1.02)}
-.maison-figure::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 1px var(--line-gold);pointer-events:none;z-index:2}
-.maison-body h2{font-size:clamp(2rem,4.2vw,3.2rem);margin-bottom:1.5rem;color:var(--forest);line-height:1.14}
-.maison-body p{color:var(--ink-soft);margin-bottom:1.2rem;font-size:1.03rem;max-width:530px}
-.stats{display:flex;gap:3rem;margin-top:2.8rem;flex-wrap:wrap}
-.stats div{display:flex;flex-direction:column}
-.stats strong{font-family:var(--display);font-weight:500;font-size:3.6rem;line-height:1;letter-spacing:.01em;background:var(--grad-gold);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;display:inline-flex;align-items:baseline}
+.maison-grid{display:grid;grid-template-columns:1fr .94fr;gap:clamp(3rem,5vw,5.5rem);align-items:center}
+.maison-figure{position:relative;margin:0}
+.maison-figure img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;border:1px solid var(--line-gold);box-shadow:0 34px 90px -44px rgba(38,51,31,.6);transition:filter 1.4s var(--ease);filter:contrast(1.03)}
+.maison-figure:hover img{filter:contrast(1.05) brightness(1.03)}
+.maison-figure figcaption{margin-top:.95rem;text-align:center;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
+.maison-body h2{font-size:clamp(2.1rem,4.4vw,3.4rem);margin-bottom:1.6rem;color:var(--forest);line-height:1.1}
+.maison-body p{color:var(--ink-soft);margin-bottom:1.2rem;font-size:1.03rem;max-width:520px}
+.stats{display:flex;margin-top:2.8rem;border-top:1px solid var(--line-gold-soft);padding-top:2.2rem}
+.stats div{display:flex;flex-direction:column;padding-right:2rem}
+.stats div+div{padding-left:2rem;border-left:1px solid var(--line-gold-soft)}
+.stats strong{font-family:var(--display);font-weight:500;font-size:clamp(2.6rem,4vw,3.6rem);line-height:1;letter-spacing:.01em;background:var(--grad-gold);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;display:inline-flex;align-items:baseline}
 .stats strong .u{font-style:normal;font-size:.42em;margin-left:.06em;transform:translateY(-.05em)}
-.stats span{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);margin-top:.9rem}
+.stats span{font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin-top:.8rem}
 
 /* ---------- house codes / usp ---------- */
 .codes-grid{display:grid;grid-template-columns:repeat(4,1fr);margin-top:5rem;padding-top:4.4rem;border-top:1px solid var(--line)}
@@ -362,7 +363,8 @@ section{position:relative;padding:8rem var(--pad)}
 .atelier .sec-index{color:var(--gold-2)}
 .atelier-grid{display:grid;grid-template-columns:.78fr 1.22fr;gap:5rem;align-items:start}
 .atelier-media{position:relative;overflow:hidden;position:sticky;top:110px;padding:15px;background:var(--bone);box-shadow:0 30px 80px -42px rgba(0,0,0,.6)}
-.atelier-media img{width:100%;aspect-ratio:4/3.4;object-fit:cover;object-position:60% 40%;filter:contrast(1.05) brightness(1.02);display:block;box-shadow:inset 0 0 0 1px var(--line)}
+.atelier-media .sk{position:relative;overflow:hidden;aspect-ratio:4/3.4;background:#efe9dc url("../assets/rings/loi-ve-sketch.jpg") no-repeat;background-size:250%;background-position:44% 33%;box-shadow:inset 0 0 0 1px var(--line)}
+.atelier-media .sk img{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
 .atelier-media figcaption{margin-top:.85rem;text-align:center;font-size:.56rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
 .timeline{list-style:none;border-left:1px solid var(--line-dark);margin-left:.5rem}
 .timeline li{position:relative;display:flex;gap:1.7rem;padding:0 0 2.8rem 2.4rem}
@@ -536,8 +538,8 @@ section{position:relative;padding:8rem var(--pad)}
   .nav-links{display:none}
   .menu-btn{display:flex}
   .maison-grid{grid-template-columns:1fr;gap:2.4rem}
-  .maison-figure{max-width:520px}
-  .maison-figure img{aspect-ratio:16/12}
+  .maison-figure{max-width:520px;order:-1;margin-inline:auto}
+  .maison-figure img{aspect-ratio:1/1}
   .codes-grid{grid-template-columns:1fr 1fr;gap:0 0}
   .code+.code{border-left:0}
   .code:nth-child(odd){padding-left:0;padding-right:1.4rem}
@@ -592,9 +594,12 @@ section{position:relative;padding:8rem var(--pad)}
   .spot-essence{font-size:1.25rem;margin-bottom:1.5rem;padding-bottom:1.5rem}
   .spot-cta{flex-direction:column;align-items:stretch}
   .spot-cta .sbtn,.spot-cta .btn{width:100%}
-  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem .8rem;margin-top:2rem}
-  .stats strong{font-size:2rem}
-  .stats span{font-size:.56rem;letter-spacing:.08em;margin-top:.6rem}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:1.9rem;padding-top:1.6rem}
+  .stats div{padding:0 .5rem}
+  .stats div+div{padding-left:.5rem}
+  .stats div+div{border-left:1px solid var(--line-gold-soft)}
+  .stats strong{font-size:1.85rem}
+  .stats span{font-size:.5rem;letter-spacing:.06em;margin-top:.5rem}
   .codes-grid{grid-template-columns:1fr;margin-top:2.8rem;padding-top:2.4rem}
   .code,.code:nth-child(even),.code:nth-child(odd){padding:1.6rem 0 0;border-left:0}
   .code:nth-child(n+2){margin-top:0;border-top:1px solid var(--line)}
@@ -662,7 +667,7 @@ section{position:relative;padding:8rem var(--pad)}
   .btn{font-size:.64rem;padding:1.05rem 1.5rem;min-height:52px;letter-spacing:.14em}
   .selhint{font-size:.58rem;padding:.55rem 1rem;max-width:100%}
   .cinema blockquote span{font-size:2rem}
-  .maison-figure,.feat-media .shot,.priv-media,.atelier-media{padding:9px}
+  .feat-media .shot,.priv-media{padding:9px}
   .quiz-submit{width:100%}
 }
 @media (prefers-reduced-motion:reduce){
