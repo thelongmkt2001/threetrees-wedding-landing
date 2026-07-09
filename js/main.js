@@ -80,8 +80,10 @@
   /* ---- ring gallery render ---- */
   const selected = new Set();
   const grid = document.getElementById('ringGrid');
+  /* mẫu đã xuất hiện ở Spotlight (loi-ve) và Featured không lặp lại trong lưới bộ sưu tập */
+  const GRID_EXCLUDE = ['loi-ve', 'threetrees', 'the-bridge', 'the-shape-of-us'];
   if (grid) {
-    RINGS.filter(r => r.id !== 'loi-ve').forEach(r => {
+    RINGS.filter(r => !GRID_EXCLUDE.includes(r.id)).forEach(r => {
       const card = document.createElement('div');
       card.className = 'ring-card';
       card.dataset.id = r.id;

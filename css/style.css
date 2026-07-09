@@ -201,24 +201,25 @@ section{position:relative;padding:8rem var(--pad)}
 .marquee-track b{color:var(--gold);font-size:.55rem;transform:translateY(-2px)}
 @keyframes marq{to{transform:translateX(-50%)}}
 
-/* ---------- spotlight (full-bleed editorial) ---------- */
+/* ---------- spotlight (centered editorial) ---------- */
 .spotlight{background:var(--cream);border-top:1px solid var(--line-gold);border-bottom:1px solid var(--line-gold);padding:0;overflow:hidden}
-.spotlight-top{display:grid;grid-template-columns:1.12fr .88fr;align-items:stretch}
-.spotlight-photo{position:relative;min-height:min(88vh,780px);overflow:hidden}
-.spotlight-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 55%}
-.spotlight-photo .feat-badge{top:0;left:0;padding:.7rem 1.3rem;letter-spacing:.18em}
-.spotlight-body{display:flex;flex-direction:column;justify-content:center;padding:clamp(3.5rem,7vw,7rem) clamp(2rem,6vw,6rem);max-width:680px}
-.spotlight-name{font-family:var(--display);font-size:clamp(3rem,5.2vw,4.8rem);color:var(--forest);line-height:.98;margin:1rem 0 1rem}
-.spotlight-meta{display:flex;align-items:center;gap:.9rem;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);font-weight:500;margin-bottom:1.6rem}
+.spotlight-inner{max-width:980px;margin:0 auto;padding:clamp(4rem,7vw,7rem) var(--pad) clamp(3rem,5vw,4.5rem);text-align:center}
+.spotlight-head .sec-index{margin-bottom:1.3rem}
+.spotlight-name{font-family:var(--display);font-size:clamp(3rem,6vw,5rem);color:var(--forest);line-height:.98;margin:0 0 1rem}
+.spotlight-meta{display:flex;justify-content:center;align-items:center;gap:.9rem;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);font-weight:500;margin-bottom:1.3rem}
 .spotlight-meta i{font-style:normal;color:var(--gold-2);font-size:.5rem}
-.spotlight-essence{font-family:var(--serif);font-style:italic;font-size:clamp(1.3rem,2vw,1.6rem);color:var(--gold-text);line-height:1.3;margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid var(--line-gold-soft)}
+.spotlight-essence{font-family:var(--serif);font-style:italic;font-size:clamp(1.35rem,2.4vw,1.9rem);color:var(--gold-text);line-height:1.3}
+.spotlight-photo{position:relative;max-width:760px;margin:clamp(2.6rem,4vw,3.4rem) auto 0;overflow:hidden}
+.spotlight-photo img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:50% 52%;display:block}
+.spotlight-photo .feat-badge{top:0;left:0;padding:.6rem 1.2rem;letter-spacing:.16em}
+.spotlight-story{max-width:520px;margin:clamp(2.6rem,4vw,3.4rem) auto 0}
 .spotlight-poem{border:0;padding:0;margin:0 0 1.8rem}
-.spotlight-poem p{font-family:var(--serif);font-style:italic;font-size:clamp(1.05rem,1.35vw,1.18rem);line-height:1.6;color:var(--forest);margin-bottom:1.2rem}
+.spotlight-poem p{font-family:var(--serif);font-style:italic;font-size:clamp(1.05rem,1.4vw,1.2rem);line-height:1.62;color:var(--forest);margin-bottom:1.15rem}
 .spotlight-poem-close{color:var(--gold-text)!important;font-weight:500}
-.spotlight-concept{font-size:.98rem;line-height:1.7;color:var(--ink-soft);padding-top:1.6rem;border-top:1px solid var(--line);margin-bottom:2.2rem;max-width:520px}
-.spotlight-cta{display:flex;flex-wrap:wrap;gap:1rem}
+.spotlight-concept{font-size:1rem;line-height:1.7;color:var(--ink-soft);padding-top:1.7rem;border-top:1px solid var(--line-gold-soft);margin:0 auto 2rem}
+.spotlight-cta{display:flex;flex-wrap:wrap;justify-content:center;gap:.9rem}
 .spotlight-cta .sbtn,.spotlight-cta .btn{min-height:56px;white-space:nowrap}
-.spotlight-sketch{position:relative;margin:0;border-top:1px solid var(--line-gold);overflow:hidden;aspect-ratio:2/1;background:#ebe4d5 url("../assets/rings/loi-ve-sketch.jpg") no-repeat;background-size:180%;background-position:50% 27%}
+.spotlight-sketch{position:relative;margin:0;border-top:1px solid var(--line-gold);overflow:hidden;aspect-ratio:24/7;background:#ebe4d5 url("../assets/rings/loi-ve-sketch.jpg") no-repeat;background-size:170%;background-position:50% 28%}
 .spotlight-sketch img{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
 .spotlight-sketch figcaption{position:absolute;left:50%;bottom:1.4rem;transform:translateX(-50%);background:rgba(251,248,241,.9);backdrop-filter:blur(4px);padding:.5rem 1.4rem;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);white-space:nowrap}
 
@@ -570,16 +571,16 @@ section{position:relative;padding:8rem var(--pad)}
   .hero-cta .btn{width:100%}
   .sec-head{margin-bottom:2rem}
   .marquee-track span{font-size:1.15rem}
-  .spotlight-top{grid-template-columns:1fr}
-  .spotlight-photo{min-height:0;aspect-ratio:1/1}
-  .spotlight-body{padding:2.8rem var(--pad) 3rem}
-  .spotlight-name{font-size:clamp(2.4rem,10vw,3.2rem);margin:.7rem 0 .8rem}
-  .spotlight-meta{margin-bottom:1.3rem}
-  .spotlight-essence{font-size:1.2rem;margin-bottom:1.5rem;padding-bottom:1.5rem}
-  .spotlight-poem{margin-bottom:1.4rem}
+  .spotlight-inner{padding:3.2rem var(--pad) 3rem}
+  .spotlight-name{font-size:clamp(2.6rem,11vw,3.4rem)}
+  .spotlight-essence{font-size:1.25rem}
+  .spotlight-photo{aspect-ratio:4/3;margin-top:2rem}
+  .spotlight-photo img{aspect-ratio:4/3}
+  .spotlight-story{margin-top:2rem}
   .spotlight-poem p{font-size:1.05rem;margin-bottom:1rem}
-  .spotlight-concept{padding-top:1.3rem;margin-bottom:1.8rem}
-  .spotlight-sketch{aspect-ratio:3/2;background-size:250%;background-position:46% 28%}
+  .spotlight-cta{flex-direction:column;align-items:stretch}
+  .spotlight-cta .sbtn,.spotlight-cta .btn{width:100%}
+  .spotlight-sketch{aspect-ratio:16/10;background-size:230%;background-position:46% 28%}
   .spotlight-sketch figcaption{bottom:1rem;font-size:.52rem;padding:.45rem 1rem;white-space:normal;max-width:80%;text-align:center}
   .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem .8rem;margin-top:2rem}
   .stats strong{font-size:2rem}
