@@ -60,13 +60,19 @@
   const menuBtn = document.getElementById('menuBtn');
   const drawer = document.getElementById('drawer');
   if (menuBtn && drawer) {
-    const toggleDrawer = (open) => {
+    const firstDrawerLink = drawer.querySelector('a');
+    const toggleDrawer = (open, returnFocus) => {
       menuBtn.classList.toggle('open', open);
       drawer.classList.toggle('open', open);
+      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      drawer.setAttribute('aria-hidden', open ? 'false' : 'true');
       document.body.style.overflow = open ? 'hidden' : '';
+      if (open && firstDrawerLink) firstDrawerLink.focus();
+      else if (!open && returnFocus) menuBtn.focus();
     };
-    menuBtn.addEventListener('click', () => toggleDrawer(!drawer.classList.contains('open')));
-    drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => toggleDrawer(false)));
+    menuBtn.addEventListener('click', () => toggleDrawer(!drawer.classList.contains('open'), true));
+    drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => toggleDrawer(false, false)));
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && drawer.classList.contains('open')) toggleDrawer(false, true); });
   }
 
   /* ---- ring gallery render ---- */
@@ -87,7 +93,7 @@
           '<h3>' + r.name + '</h3>' +
           '<div class="essence">' + r.essence + '</div>' +
           '<p>' + r.desc + '</p>' +
-          '<button type="button" class="ring-select"><span class="plus">+</span> <span class="lbl">Thêm vào buổi tư vấn</span></button>' +
+          '<button type="button" class="ring-select" aria-pressed="false"><span class="plus">+</span> <span class="lbl">Thêm vào buổi tư vấn</span></button>' +
         '</div>';
       card.addEventListener('click', () => toggle(r.id));
       grid.appendChild(card);
@@ -131,13 +137,16 @@
       const card = grid && grid.querySelector('[data-id="' + r.id + '"]');
       if (card) {
         card.classList.toggle('selected', on);
+        const selectBtn = card.querySelector('.ring-select');
         card.querySelector('.lbl').textContent = on ? 'Đã thêm' : 'Thêm vào buổi tư vấn';
         card.querySelector('.plus').textContent = on ? '✓' : '+';
+        if (selectBtn) selectBtn.setAttribute('aria-pressed', on ? 'true' : 'false');
       }
     });
     document.querySelectorAll('[data-add]').forEach(btn => {
       const on = selected.has(btn.dataset.add);
       btn.classList.toggle('on', on);
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
       const l = btn.querySelector('.l'); if (l) l.textContent = on ? 'Đã thêm' : 'Thêm vào buổi tư vấn';
       const i = btn.querySelector('.i'); if (i) i.textContent = on ? '✓' : '+';
     });
@@ -242,23 +251,37 @@
   if (fine && !reduced) {
     document.querySelectorAll('[data-magnetic]').forEach(btn => {
       const s = 0.26;
+      let r = null;
+      btn.addEventListener('mouseenter', () => { r = btn.getBoundingClientRect(); });
       btn.addEventListener('mousemove', (e) => {
-        const r = btn.getBoundingClientRect();
+        if (!r) r = btn.getBoundingClientRect();
         btn.style.transform = 'translate(' + ((e.clientX - r.left - r.width / 2) * s) + 'px,' + ((e.clientY - r.top - r.height / 2) * s) + 'px)';
       });
-      btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
+      btn.addEventListener('mouseleave', () => { btn.style.transform = ''; r = null; });
     });
   }
 
   /* ---- lead form ---- */
   const form = document.getElementById('leadForm');
   if (form) {
+    function setFieldError(inputEl, errEl, message) {
+      inputEl.classList.toggle('invalid', !!message);
+      inputEl.setAttribute('aria-invalid', message ? 'true' : 'false');
+      if (errEl) { errEl.textContent = message || ''; errEl.classList.toggle('show', !!message); }
+    }
+
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const name = document.getElementById('fName').value.trim();
-      const phone = document.getElementById('fPhone').value.trim();
-      if (!name) { document.getElementById('fName').focus(); return; }
-      if (!/^[0-9+\s().-]{8,}$/.test(phone)) { document.getElementById('fPhone').focus(); return; }
+      const nameEl = document.getElementById('fName');
+      const phoneEl = document.getElementById('fPhone');
+      const name = nameEl.value.trim();
+      const phone = phoneEl.value.trim();
+      const nameValid = !!name;
+      const phoneValid = /^[0-9+\s().-]{8,}$/.test(phone);
+      setFieldError(nameEl, document.getElementById('fNameErr'), nameValid ? '' : 'Vui lòng nhập họ và tên.');
+      setFieldError(phoneEl, document.getElementById('fPhoneErr'), phoneValid ? '' : 'Số điện thoại chưa hợp lệ (tối thiểu 8 số).');
+      if (!nameValid) { nameEl.focus(); return; }
+      if (!phoneValid) { phoneEl.focus(); return; }
 
       const d = new FormData(form);
       d.set('selected_rings', document.getElementById('fRings').value);
@@ -299,15 +322,21 @@
   }
 
   /* ---- thank-you modal ---- */
+  let modalReturnFocus = null;
   function openModal() {
     const m = document.getElementById('thankModal');
     if (!m) return;
+    modalReturnFocus = document.activeElement;
     m.classList.add('open'); m.setAttribute('aria-hidden', 'false'); document.body.style.overflow = 'hidden';
+    const closeBtn = m.querySelector('.modal-close');
+    if (closeBtn) closeBtn.focus();
   }
   function closeModal() {
     const m = document.getElementById('thankModal');
     if (!m) return;
     m.classList.remove('open'); m.setAttribute('aria-hidden', 'true'); document.body.style.overflow = '';
+    if (modalReturnFocus && modalReturnFocus.focus) modalReturnFocus.focus();
+    modalReturnFocus = null;
   }
   document.querySelectorAll('#thankModal [data-close]').forEach(el => el.addEventListener('click', closeModal));
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
@@ -362,7 +391,7 @@
               '<b>' + o.r.name + '</b>' +
               '<span class="qr-essence">' + o.r.essence + '</span>' +
               '<p class="qr-desc">' + o.r.desc + '</p>' +
-              '<button type="button" class="qr-add" data-add="' + o.r.id + '"><span class="i">+</span> <span class="l">Thêm vào buổi tư vấn</span></button>' +
+              '<button type="button" class="qr-add" data-add="' + o.r.id + '" aria-pressed="false"><span class="i">+</span> <span class="l">Thêm vào buổi tư vấn</span></button>' +
             '</div>' +
           '</div>').join('') + '</div>' +
         '<div class="qr-hint">← Vuốt để xem các mẫu khác →</div>' +

@@ -10,7 +10,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:image" content="assets/rings/threetrees.jpg" />
 <link rel="preload" href="assets/fonts/BeautiqueDisplay-Medium.otf" as="font" type="font/otf" crossorigin />
-<link rel="preload" href="assets/fonts/FZPoppins-Regular.ttf" as="font" type="font/ttf" crossorigin />
+<link rel="preload" href="assets/fonts/FZPoppins-Light.ttf" as="font" type="font/ttf" crossorigin />
 <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -55,12 +55,12 @@
   <div class="nav-right">
     <a href="tel:0862760663" class="nav-phone">☎ 0862.760.663</a>
     <a href="#form" class="nav-appoint">Đặt lịch tư vấn</a>
-    <button class="menu-btn" id="menuBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false" aria-controls="drawer"><span></span><span></span><span></span></button>
   </div>
 </header>
 
 <!-- drawer -->
-<div class="drawer" id="drawer">
+<div class="drawer" id="drawer" aria-hidden="true">
   <div class="drawer-links">
     <a href="#featured"><i>01</i> Yêu thích nhất</a>
     <a href="#collection"><i>02</i> Bộ sưu tập</a>
@@ -111,8 +111,7 @@
 <section class="maison">
   <div class="wrap maison-grid">
     <figure class="maison-figure rv">
-      <span class="cnr tl"></span><span class="cnr br"></span>
-      <img src="assets/img/veil-hand.jpg" alt="Vẻ đẹp nhẫn cưới ThreeTrees" />
+      <img src="assets/img/veil-hand.jpg" alt="Vẻ đẹp nhẫn cưới ThreeTrees" loading="lazy" />
     </figure>
     <div class="maison-body rv">
       <span class="sec-index">Di sản — The Maison</span>
@@ -171,9 +170,8 @@
 
     <div class="feat-row rv">
       <div class="feat-media">
-        <span class="feat-cnr tl"></span><span class="feat-cnr br"></span>
         <div class="feat-badge">◆ Được chọn nhiều nhất</div>
-        <div class="shot"><img src="assets/rings/threetrees.jpg" alt="Nhẫn cưới ThreeTrees" /></div>
+        <div class="shot"><img src="assets/rings/threetrees.jpg" alt="Nhẫn cưới ThreeTrees" loading="lazy" /></div>
       </div>
       <div class="feat-text">
         <span class="feat-no">01</span>
@@ -181,15 +179,14 @@
         <h3>ThreeTrees</h3>
         <div class="essence">Không giống nhau, mãi mãi thuộc về nhau</div>
         <p>Trong tình yêu, mỗi người có một cách thể hiện khác nhau — có người rực rỡ như những cánh hoa, có người lặng lẽ như mảnh đất nuôi dưỡng cả khu vườn. ThreeTrees tạo nên cặp nhẫn với hai ngôn ngữ thiết kế khác biệt: một chiếc nở rộ bởi những viên đá như vòng hoa khoe sắc, chiếc còn lại tối giản và vững chãi. Không giống nhau, nhưng luôn nhận ra nhau.</p>
-        <div class="feat-select"><button type="button" class="sbtn" data-add="threetrees"><span class="i">+</span> <span class="l">Thêm vào buổi tư vấn</span></button></div>
+        <div class="feat-select"><button type="button" class="sbtn" data-add="threetrees" aria-pressed="false"><span class="i">+</span> <span class="l">Thêm vào buổi tư vấn</span></button></div>
       </div>
     </div>
 
     <div class="feat-row rv">
       <div class="feat-media">
-        <span class="feat-cnr tl"></span><span class="feat-cnr br"></span>
         <div class="feat-badge">◆ Biểu tượng của Maison</div>
-        <div class="shot"><img src="assets/rings/the-bridge.jpg" alt="Nhẫn cưới The Bridge" /></div>
+        <div class="shot"><img src="assets/rings/the-bridge.jpg" alt="Nhẫn cưới The Bridge" loading="lazy" /></div>
       </div>
       <div class="feat-text">
         <span class="feat-no">02</span>
@@ -197,15 +194,14 @@
         <h3>The Bridge</h3>
         <div class="essence">Nhịp cầu của sự đồng hành</div>
         <p>Mỗi mối quan hệ đều cần một điểm tựa đủ vững để cùng nhau bước qua những đổi thay của thời gian. Lấy cảm hứng từ hình ảnh cây cầu — biểu tượng của sự kết nối — họa tiết trên thân nhẫn được chế tác như những mắt nối liên tiếp, mỗi mắt nối đều góp phần nâng đỡ tổng thể. Một lời nhắc rằng tình yêu bền vững không đến từ một khoảnh khắc lớn lao, mà từ vô vàn lần lựa chọn bước tiếp cùng nhau.</p>
-        <div class="feat-select"><button type="button" class="sbtn" data-add="the-bridge"><span class="i">+</span> <span class="l">Thêm vào buổi tư vấn</span></button></div>
+        <div class="feat-select"><button type="button" class="sbtn" data-add="the-bridge" aria-pressed="false"><span class="i">+</span> <span class="l">Thêm vào buổi tư vấn</span></button></div>
       </div>
     </div>
 
     <div class="feat-row rv">
       <div class="feat-media">
-        <span class="feat-cnr tl"></span><span class="feat-cnr br"></span>
         <div class="feat-badge">◆ Được nhiều cặp đôi chọn</div>
-        <div class="shot"><img src="assets/rings/the-shape-of-us.jpg" alt="Nhẫn cưới The Shape Of Us" /></div>
+        <div class="shot"><img src="assets/rings/the-shape-of-us.jpg" alt="Nhẫn cưới The Shape Of Us" loading="lazy" /></div>
       </div>
       <div class="feat-text">
         <span class="feat-no">03</span>
@@ -213,7 +209,7 @@
         <h3>The Shape Of Us</h3>
         <div class="essence">Hai bản thể, một hành trình</div>
         <p>Một cặp nhẫn cùng ngôn ngữ thiết kế tổng thể nhưng khác nhau ở chi tiết — cách ThreeTrees thể hiện niềm tin rằng những người yêu nhau luôn nhận ra hình bóng của mình trong đối phương. Một chiếc giữ vẻ đẹp tối giản của kim loại, chiếc còn lại được điểm xuyết kim cương trên chính những đường nét ấy. Kể cả khi hai tâm hồn trở thành một, mỗi người vẫn tỏa sáng theo cách riêng.</p>
-        <div class="feat-select"><button type="button" class="sbtn" data-add="the-shape-of-us"><span class="i">+</span> <span class="l">Thêm vào buổi tư vấn</span></button></div>
+        <div class="feat-select"><button type="button" class="sbtn" data-add="the-shape-of-us" aria-pressed="false"><span class="i">+</span> <span class="l">Thêm vào buổi tư vấn</span></button></div>
       </div>
     </div>
   </div>
@@ -281,7 +277,7 @@
 <!-- atelier timeline -->
 <section class="atelier" id="atelier">
   <div class="wrap atelier-grid">
-    <div class="atelier-media rv"><img src="assets/img/consult-sketch.jpg" alt="Tư vấn và phác thảo thiết kế" /></div>
+    <div class="atelier-media rv"><img src="assets/img/consult-sketch.jpg" alt="Tư vấn và phác thảo thiết kế" loading="lazy" /></div>
     <div>
       <span class="sec-index rv">Hành trình Memory-Crafted</span>
       <h2 class="rv" style="font-size:clamp(2rem,4.4vw,3.2rem);color:var(--forest);margin-bottom:2.6rem">5 bước tạo nên chiếc nhẫn chỉ thuộc về hai người</h2>
@@ -305,9 +301,9 @@
       <p>Từ khối kim loại thô đến từng chi tiết hoàn thiện, mỗi cặp nhẫn đi qua bàn tay của những người thợ kế thừa 143 năm tinh hoa kim hoàn Antwerp – Bỉ.</p>
     </div>
     <div class="craft-grid">
-      <div class="craft-card rv"><img src="assets/img/craft-fire.jpg" alt="Nung chảy kim loại" /><div class="cap"><b>Khởi nguồn từ lửa</b><span>Kim loại quý được nung chảy và tạo phôi thủ công.</span></div></div>
-      <div class="craft-card rv"><img src="assets/img/craft-engrave.jpg" alt="Chạm khắc thủ công" /><div class="cap"><b>Chạm khắc từng đường nét</b><span>Mỗi họa tiết được khắc tay tỉ mỉ theo thiết kế riêng.</span></div></div>
-      <div class="craft-card rv"><img src="assets/img/craft-polish.jpg" alt="Đánh bóng hoàn thiện" /><div class="cap"><b>Hoàn thiện tinh xảo</b><span>Đánh bóng đến khi từng góc nhẫn phản chiếu ánh sáng.</span></div></div>
+      <div class="craft-card rv"><img src="assets/img/craft-fire.jpg" alt="Nung chảy kim loại" loading="lazy" /><div class="cap"><b>Khởi nguồn từ lửa</b><span>Kim loại quý được nung chảy và tạo phôi thủ công.</span></div></div>
+      <div class="craft-card rv"><img src="assets/img/craft-engrave.jpg" alt="Chạm khắc thủ công" loading="lazy" /><div class="cap"><b>Chạm khắc từng đường nét</b><span>Mỗi họa tiết được khắc tay tỉ mỉ theo thiết kế riêng.</span></div></div>
+      <div class="craft-card rv"><img src="assets/img/craft-polish.jpg" alt="Đánh bóng hoàn thiện" loading="lazy" /><div class="cap"><b>Hoàn thiện tinh xảo</b><span>Đánh bóng đến khi từng góc nhẫn phản chiếu ánh sáng.</span></div></div>
     </div>
   </div>
 </section>
@@ -328,7 +324,7 @@
       </ul>
       <a href="#form" class="btn btn-solid" style="margin-top:2rem" data-magnetic><span>Nhận tư vấn &amp; đặc quyền</span></a>
     </div>
-    <div class="priv-media rv"><img src="assets/img/velvet-box.jpg" alt="Hộp nhẫn cá nhân hóa ThreeTrees" /></div>
+    <div class="priv-media rv"><img src="assets/img/velvet-box.jpg" alt="Hộp nhẫn cá nhân hóa ThreeTrees" loading="lazy" /></div>
   </div>
 </section>
 
@@ -390,17 +386,19 @@
           <div class="chips" id="chips"><span class="empty" id="chipsEmpty">Chưa chọn mẫu nào — hãy chọn ở phần Bộ sưu tập phía trên ↑</span></div>
         </div>
         <div class="fld">
-          <label>Họ và tên <span class="req">*</span></label>
-          <input type="text" name="name" id="fName" placeholder="Nguyễn Văn A" required />
+          <label for="fName">Họ và tên <span class="req">*</span></label>
+          <input type="text" name="name" id="fName" placeholder="Nguyễn Văn A" required aria-describedby="fNameErr" />
+          <span class="fld-err" id="fNameErr" role="alert"></span>
         </div>
         <div class="fld2">
           <div class="fld">
-            <label>Số điện thoại <span class="req">*</span></label>
-            <input type="tel" name="phone" id="fPhone" inputmode="numeric" placeholder="09xx xxx xxx" required />
-            <span class="fld-hint">Chỉ dùng để chuyên gia liên hệ tư vấn.</span>
+            <label for="fPhone">Số điện thoại <span class="req">*</span></label>
+            <input type="tel" name="phone" id="fPhone" inputmode="numeric" placeholder="09xx xxx xxx" required aria-describedby="fPhoneHint fPhoneErr" />
+            <span class="fld-hint" id="fPhoneHint">Chỉ dùng để chuyên gia liên hệ tư vấn.</span>
+            <span class="fld-err" id="fPhoneErr" role="alert"></span>
           </div>
           <div class="fld">
-            <label>Ngày cưới dự kiến</label>
+            <label for="fDate">Ngày cưới dự kiến</label>
             <input type="date" name="wedding_date" id="fDate" />
           </div>
         </div>
@@ -414,7 +412,7 @@
           </div>
         </div>
         <div class="fld">
-          <label>Lời nhắn (không bắt buộc)</label>
+          <label for="fNote">Lời nhắn (không bắt buộc)</label>
           <textarea name="note" id="fNote" rows="2" placeholder="Chất liệu mong muốn, ngân sách dự kiến, hoặc câu chuyện của hai bạn..."></textarea>
         </div>
         <input type="hidden" name="selected_rings" id="fRings" />
