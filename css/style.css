@@ -210,18 +210,18 @@ section{position:relative;padding:8rem var(--pad)}
 .manifesto-note{max-width:620px;margin:2.6rem auto 0;color:var(--ink-soft);font-size:1.02rem;line-height:1.9}
 .manifesto-sign{margin-top:2rem;font-family:var(--serif);font-style:italic;font-size:1.2rem;color:var(--gold-text)}
 
-/* ---------- spotlight "Lối Về" (full-bleed đắm chìm) ---------- */
-.spot{position:relative;background:var(--forest-deep);color:var(--bone);padding:0;overflow:hidden;min-height:min(90vh,760px);display:flex;align-items:center;border-top:1px solid var(--line-dark);border-bottom:1px solid var(--line-dark)}
-.spot-media{position:absolute;inset:0;margin:0;z-index:0}
-.spot-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:64% 50%}
-.spot-media::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(15,21,11,.97) 0%,rgba(15,21,11,.92) 32%,rgba(15,21,11,.6) 54%,rgba(15,21,11,.14) 80%,rgba(15,21,11,.34) 100%)}
-.spot-tag{position:absolute;right:1.6rem;bottom:1.5rem;z-index:3;font-family:var(--sans);font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-bright);background:rgba(15,21,11,.5);backdrop-filter:blur(3px);padding:.5rem .9rem}
-.spot-wrap{position:relative;z-index:2;width:100%;max-width:var(--maxw);margin:0 auto;padding:clamp(3.5rem,6vw,6rem) var(--pad)}
-.spot-body{max-width:540px}
+/* ---------- spotlight "Lối Về" (jewel-box tối) ---------- */
+.spot{position:relative;background:var(--forest-deep);color:var(--bone);padding:0;overflow:hidden;border-top:1px solid var(--line-dark);border-bottom:1px solid var(--line-dark);display:grid;grid-template-columns:1.05fr .95fr;align-items:stretch}
+.spot::before{content:"";position:absolute;top:50%;right:20%;width:64vmin;height:64vmin;transform:translateY(-50%);background:radial-gradient(circle,rgba(230,208,154,.13),transparent 62%);pointer-events:none;z-index:0}
+.spot-media{position:relative;margin:0;min-height:min(90vh,760px);overflow:hidden}
+.spot-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 55%}
+.spot-media::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(27,36,21,.3),transparent 26%,transparent 74%,rgba(27,36,21,.9))}
+.spot-tag{position:absolute;left:1.4rem;bottom:1.4rem;z-index:2;font-family:var(--sans);font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-bright);background:rgba(20,27,16,.55);backdrop-filter:blur(3px);padding:.5rem .9rem}
+.spot-body{position:relative;z-index:1;display:flex;flex-direction:column;justify-content:center;padding:clamp(3.5rem,6vw,6.5rem) clamp(2rem,6vw,6rem);max-width:660px}
 .spot-eyebrow{font-family:var(--sans);font-weight:500;font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-2)}
 .spot-name{font-family:var(--display);font-size:clamp(3.2rem,6vw,5.4rem);line-height:.96;color:var(--bone);margin:1.1rem 0}
-.spot-essence{font-family:var(--serif);font-style:italic;font-size:clamp(1.3rem,2.2vw,1.75rem);color:var(--gold-bright);line-height:1.3;margin-bottom:1.8rem;padding-bottom:1.8rem;border-bottom:1px solid var(--line-dark)}
-.spot-poem p{font-family:var(--serif);font-style:italic;font-size:clamp(1.02rem,1.35vw,1.15rem);line-height:1.62;color:var(--bone-dim);margin-bottom:.95rem;text-shadow:0 1px 12px rgba(15,21,11,.6)}
+.spot-essence{font-family:var(--serif);font-style:italic;font-size:clamp(1.3rem,2.2vw,1.75rem);color:var(--gold-bright);line-height:1.3;margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid var(--line-dark)}
+.spot-poem p{font-family:var(--serif);font-style:italic;font-size:clamp(1.02rem,1.35vw,1.15rem);line-height:1.65;color:var(--bone-dim);margin-bottom:1.05rem}
 .spot-poem em{color:var(--gold-bright);font-style:italic}
 .spot-cta{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:1.8rem}
 .spot .spot-cta .sbtn{border-color:var(--gold-2);color:var(--gold-bright)}
@@ -581,15 +581,13 @@ section{position:relative;padding:8rem var(--pad)}
   .manifesto-text{font-size:clamp(1.2rem,4.6vw,1.5rem);line-height:1.5}
   .manifesto-note{margin-top:1.6rem;font-size:.94rem;line-height:1.75}
   .manifesto-sign{margin-top:1.4rem}
-  .spot{min-height:0;display:block}
-  .spot-media{position:relative;inset:auto;aspect-ratio:4/3}
-  .spot-media::after{background:linear-gradient(180deg,transparent 45%,rgba(15,21,11,.5))}
-  .spot-tag{right:1rem;bottom:1rem}
-  .spot-wrap{padding:2.6rem var(--pad) 3.2rem}
-  .spot-body{max-width:none}
+  .spot{grid-template-columns:1fr}
+  .spot::before{display:none}
+  .spot-media{min-height:0;aspect-ratio:4/3}
+  .spot-media::after{background:linear-gradient(180deg,rgba(27,36,21,.15),transparent 32%,transparent 68%,rgba(27,36,21,.65))}
+  .spot-body{padding:2.8rem var(--pad) 3.2rem;max-width:none}
   .spot-name{font-size:clamp(2.6rem,11vw,3.4rem)}
   .spot-essence{font-size:1.25rem;margin-bottom:1.5rem;padding-bottom:1.5rem}
-  .spot-poem p{text-shadow:none}
   .spot-cta{flex-direction:column;align-items:stretch}
   .spot-cta .sbtn,.spot-cta .btn{width:100%}
   .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem .8rem;margin-top:2rem}
