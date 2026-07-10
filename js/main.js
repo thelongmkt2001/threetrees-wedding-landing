@@ -175,6 +175,7 @@
     const cc = document.getElementById('chipsCount'); if (cc) cc.textContent = n;
     const fn = document.getElementById('floatN'); if (fn) fn.textContent = n;
     const fr = document.getElementById('fRings'); if (fr) fr.value = [...selected].map(id => RINGS.find(x => x.id === id).name).join(', ');
+    document.body.classList.toggle('has-selection', n > 0);
     const fc = document.getElementById('floatCart'); if (fc) fc.classList.toggle('show', n > 0);
       const mb = document.getElementById('mbPrimary'); if (mb) { const s = mb.querySelector('span'); if (s) s.textContent = n ? 'Tư vấn ' + n + ' mẫu' : 'Nhận tư vấn'; }
   }
