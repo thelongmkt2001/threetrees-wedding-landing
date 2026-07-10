@@ -20,25 +20,23 @@
   /* ---- ring data ---- */
   const RINGS = [
     {id:"memory-note", name:"Memory Note", metal:"Vàng trắng", essence:"Ký ức nhỏ, tình yêu lớn", img:"assets/rings/memory-note.jpg",
-     desc:"Bề mặt nhẫn được chế tác với những mặt cắt thủ công liên tiếp, mỗi mặt như một ký ức riêng biệt. Khi ánh sáng chuyển động, từng góc nhẫn phản chiếu một sắc độ khác nhau — như lời nhắc rằng tình yêu được tạo nên từ vô vàn điều bình dị mỗi ngày."},
+     desc:"Bề mặt có nhiều mặt cắt nhỏ, tạo hiệu ứng ánh sáng thay đổi khi đeo. Mẫu này hợp với cặp đôi thích chi tiết thủ công nhưng vẫn muốn dáng nhẫn gọn, dễ dùng hằng ngày."},
     {id:"imperfect-facets", name:"Imperfect Facets", metal:"Vàng hồng", essence:"Không hoàn hảo mà trọn vẹn", img:"assets/rings/imperfect-facets.jpg",
-     desc:"Không mối quan hệ nào chỉ có những ngày rực rỡ. Thiết kế sử dụng các mặt cắt bất đối xứng, để mỗi góc nhìn phản chiếu một sắc thái riêng của cảm xúc. Chính những điều không hoàn hảo ấy mới tạo nên một tình yêu trọn vẹn."},
+     desc:"Các mặt cắt bất đối xứng tạo cảm giác tự nhiên, không quá bóng bẩy. Phù hợp với người thích vàng hồng và muốn bề mặt nhẫn có dấu ấn riêng khi nhìn gần."},
     {id:"duong-van", name:"Đường Vân", metal:"Vàng vàng", essence:"Mọi hành trình đều hội tụ", img:"assets/rings/duong-van.jpg",
-     desc:"Không phải hành trình nào cũng bằng phẳng. Bề mặt nhẫn được chạm khắc thủ công bằng những đường vân liên tiếp, mỗi đường cao thấp khác nhau nhưng cùng hội tụ trong một vòng tròn khép kín — như cách mọi trải nghiệm đều trở thành một phần của tình yêu."},
+     desc:"Bề mặt được xử lý bằng các đường vân liên tiếp, tạo độ sâu mà vẫn giữ dáng nhẫn đơn giản. Đây là lựa chọn dễ đeo cho cặp đôi thích vàng vàng và chi tiết tinh tế."},
     {id:"red-field", name:"Red Field", metal:"Vàng hồng · Kim cương", essence:"Khác biệt được tôn vinh", img:"assets/rings/red-field.jpg",
-     desc:"Hai chiếc nhẫn được chế tác từ cùng một khối vàng hồng, chung ngôn ngữ tạo hình nhưng mang hai sắc thái riêng qua chuỗi kim cương trắng và kim cương đen. Khác biệt không bị xóa bỏ, mà được tôn vinh như một phần tạo nên sự cân bằng."},
+     desc:"Hai chiếc nhẫn dùng cùng nền vàng hồng nhưng khác sắc thái qua kim cương trắng và kim cương đen. Mẫu này hợp với cặp đôi muốn có cá tính rõ nhưng vẫn nhìn cùng bộ."},
     {id:"the-bridge", name:"The Bridge", metal:"Vàng trắng", essence:"Nhịp cầu của sự đồng hành", img:"assets/rings/the-bridge.jpg",
-     desc:"Lấy cảm hứng từ hình ảnh cây cầu — biểu tượng của sự kết nối — họa tiết trên thân nhẫn được chế tác như những mắt nối liên tiếp. Tình yêu bền vững không đến từ một khoảnh khắc lớn lao, mà từ vô vàn lần lựa chọn bước tiếp cùng nhau."},
-    {id:"threetrees", name:"ThreeTrees", metal:"Vàng hồng · Kim cương", essence:"Không giống nhau, thuộc về nhau", img:"assets/rings/threetrees.jpg",
-     desc:"Cặp nhẫn với hai ngôn ngữ thiết kế khác biệt: một chiếc nở rộ bởi những viên đá như vòng hoa khoe sắc, chiếc còn lại tối giản và vững chãi. Có người rực rỡ như cánh hoa, có người lặng lẽ như mảnh đất — không giống nhau nhưng thuộc về nhau."},
+     desc:"Thiết kế có các đường nối đều trên thân nhẫn, tạo điểm nhận diện vừa đủ. Phù hợp với người thích vàng trắng, dáng gọn và muốn đeo thoải mái lâu dài."},
     {id:"again-again", name:"Again & Again", metal:"Vàng hồng · Kim cương", essence:"Yêu thương lặp lại mỗi ngày", img:"assets/rings/again-again.jpg",
-     desc:"Again & Again được tạo nên với dải kim cương nhỏ nối tiếp theo đường cong mềm mại, tượng trưng cho những yêu thương âm thầm nhưng bền bỉ. Hạnh phúc không đến từ một khoảnh khắc, mà từ những điều giản dị được nuôi dưỡng mỗi ngày."},
+     desc:"Dải kim cương nhỏ chạy theo đường cong mềm, tạo cảm giác sáng nhưng không quá nặng. Mẫu này hợp với cô dâu thích sự nữ tính, nhẹ và dễ phối với nhẫn đính hôn."},
     {id:"chung-ta", name:"Chúng Ta Thuộc Về Nhau", metal:"Vàng trắng", essence:"Lời hứa chỉ hai người hiểu", img:"assets/rings/chung-ta.jpg",
-     desc:"Một cặp nhẫn với vẻ ngoài tối giản, ẩn chứa bên trong một lời hứa. Những dòng chữ khắc bên trong không dành cho thế giới nhìn thấy — chúng chỉ tồn tại cho hai người, mỗi lần nhìn nhẫn là một lần nhớ về lý do đã chọn nhau."},
+     desc:"Bên ngoài tối giản, điểm nhấn nằm ở phần khắc bên trong thân nhẫn. Phù hợp với cặp đôi thích nhẫn cưới kín đáo, ít chi tiết bên ngoài nhưng có ý nghĩa riêng."},
     {id:"the-shape-of-us", name:"The Shape Of Us", metal:"Vàng trắng · Kim cương", essence:"Hai bản thể, một hành trình", img:"assets/rings/the-shape-of-us.jpg",
-     desc:"Cùng ngôn ngữ thiết kế tổng thể nhưng khác nhau ở chi tiết — một chiếc giữ vẻ đẹp tối giản của kim loại, chiếc còn lại điểm xuyết kim cương trên chính những đường nét ấy. Kể cả khi hai tâm hồn trở thành một, mỗi người vẫn tỏa sáng theo cách riêng."},
+     desc:"Hai chiếc nhẫn giữ cùng ngôn ngữ thiết kế nhưng khác mức độ điểm đá và bề mặt. Phù hợp với cặp đôi muốn đồng bộ khi đeo cùng nhau mà không cần giống hệt."},
     {id:"loi-ve", name:"Lối Về", metal:"Vàng hồng 18K", essence:"Không giữ nhau, nhưng luôn có nhau", img:"assets/rings/loi-ve.jpg",
-     desc:"Có những tình yêu không giữ chặt, mà vẫn chẳng bao giờ rời xa. Nhẫn nam giữ vẻ tối giản với bề mặt xước mờ, lòng nhẫn khắc chìm họa tiết lá — bản in tiết chế của nhẫn nữ. Nhẫn nữ là những chiếc lá vàng hồng ôm lấy từng viên kim cương như giọt sương đọng lại, sắp xếp tự nhiên, không theo quy tắc cố định. Em tỏa sáng theo cách của riêng mình — nhưng trong lòng anh, vẫn luôn có một khoảng dành riêng cho em."}
+     desc:"Nhẫn nam tối giản với bề mặt xước mờ, nhẫn nữ nổi bật bằng chi tiết lá vàng hồng ôm kim cương. Mẫu này hợp với người thích vàng hồng, dáng mềm và cảm giác lãng mạn vừa đủ."}
   ];
 
   /* ---- loader ---- */
@@ -80,8 +78,8 @@
   /* ---- ring gallery render ---- */
   const selected = new Set();
   const grid = document.getElementById('ringGrid');
-  /* mẫu đã xuất hiện ở Spotlight (loi-ve) và Featured không lặp lại trong lưới bộ sưu tập */
-  const GRID_EXCLUDE = ['loi-ve', 'threetrees', 'the-bridge', 'the-shape-of-us'];
+  /* Collection hiển thị đủ mẫu để người dùng so sánh và chọn nhanh trước khi gửi form. */
+  const GRID_EXCLUDE = [];
   if (grid) {
     RINGS.filter(r => !GRID_EXCLUDE.includes(r.id)).forEach(r => {
       const card = document.createElement('div');
@@ -89,7 +87,6 @@
       card.dataset.id = r.id;
       card.innerHTML =
         '<div class="ring-thumb">' +
-          '<span class="ring-tag">' + r.metal + '</span>' +
           '<img src="' + r.img + '" alt="Nhẫn cưới ' + r.name + '" loading="lazy" />' +
         '</div>' +
         '<div class="ring-body">' +
@@ -97,7 +94,7 @@
           '<h3>' + r.name + '</h3>' +
           '<div class="essence">' + r.essence + '</div>' +
           '<p>' + r.desc + '</p>' +
-          '<button type="button" class="ring-select" aria-pressed="false"><span class="plus">+</span> <span class="lbl">Thêm vào buổi tư vấn</span></button>' +
+          '<button type="button" class="ring-select" aria-pressed="false"><span class="plus">+</span> <span class="lbl">Tư vấn</span></button>' +
         '</div>';
       card.addEventListener('click', () => toggle(r.id));
       grid.appendChild(card);
@@ -128,7 +125,7 @@
       toastEl.className = 'toast';
       document.body.appendChild(toastEl);
     }
-    toastEl.innerHTML = '<span class="tk">✦</span><span>' + html + '</span><a class="tgo" href="#form">Xem →</a>';
+    toastEl.innerHTML = '<span class="tk">✦</span><span>' + html + '</span><a class="tgo" href="#form">Gửi tư vấn →</a>';
     toastEl.querySelector('.tgo').addEventListener('click', () => { clearTimeout(toastT); toastEl.classList.remove('show'); });
     requestAnimationFrame(() => toastEl.classList.add('show'));
     clearTimeout(toastT);
@@ -142,7 +139,7 @@
       if (card) {
         card.classList.toggle('selected', on);
         const selectBtn = card.querySelector('.ring-select');
-        card.querySelector('.lbl').textContent = on ? 'Đã thêm' : 'Thêm vào buổi tư vấn';
+        card.querySelector('.lbl').textContent = on ? 'Đã chọn' : 'Tư vấn';
         card.querySelector('.plus').textContent = on ? '✓' : '+';
         if (selectBtn) selectBtn.setAttribute('aria-pressed', on ? 'true' : 'false');
       }
@@ -151,7 +148,7 @@
       const on = selected.has(btn.dataset.add);
       btn.classList.toggle('on', on);
       btn.setAttribute('aria-pressed', on ? 'true' : 'false');
-      const l = btn.querySelector('.l'); if (l) l.textContent = on ? 'Đã thêm' : 'Thêm vào buổi tư vấn';
+      const l = btn.querySelector('.l'); if (l) l.textContent = on ? 'Đã chọn' : 'Tư vấn mẫu này';
       const i = btn.querySelector('.i'); if (i) i.textContent = on ? '✓' : '+';
     });
   }
@@ -174,11 +171,12 @@
       });
     }
     const n = selected.size;
+    chips.classList.toggle('has-selection', n > 0);
     const cc = document.getElementById('chipsCount'); if (cc) cc.textContent = n;
     const fn = document.getElementById('floatN'); if (fn) fn.textContent = n;
     const fr = document.getElementById('fRings'); if (fr) fr.value = [...selected].map(id => RINGS.find(x => x.id === id).name).join(', ');
     const fc = document.getElementById('floatCart'); if (fc) fc.classList.toggle('show', n > 0);
-    const mb = document.getElementById('mbPrimary'); if (mb) { const s = mb.querySelector('span'); if (s) s.textContent = n ? 'Đặt lịch (' + n + ' mẫu)' : 'Đặt lịch tư vấn'; }
+      const mb = document.getElementById('mbPrimary'); if (mb) { const s = mb.querySelector('span'); if (s) s.textContent = n ? 'Tư vấn ' + n + ' mẫu' : 'Nhận tư vấn'; }
   }
 
   /* ---- reveal (with graceful fallback) ---- */
@@ -215,24 +213,6 @@
   }, { threshold: 0.6 });
   document.querySelectorAll('[data-count]').forEach(c => cio.observe(c));
 
-  /* ---- cursor ---- */
-  if (fine && !reduced) {
-    const ring = document.getElementById('cursor');
-    const dot = document.getElementById('cursorDot');
-    if (ring && dot) {
-      let mx = innerWidth / 2, my = innerHeight / 2, rx = mx, ry = my;
-      addEventListener('mousemove', (e) => { mx = e.clientX; my = e.clientY; dot.style.transform = 'translate(' + mx + 'px,' + my + 'px)'; });
-      const loop = () => { rx += (mx - rx) * 0.16; ry += (my - ry) * 0.16; ring.style.transform = 'translate(' + rx + 'px,' + ry + 'px)'; requestAnimationFrame(loop); };
-      loop();
-      const bind = () => document.querySelectorAll('a,button,[data-cursor],.ring-card').forEach(el => {
-        if (el._cur) return; el._cur = 1;
-        el.addEventListener('mouseenter', () => ring.classList.add('hover'));
-        el.addEventListener('mouseleave', () => ring.classList.remove('hover'));
-      });
-      bind(); setTimeout(bind, 500);
-    }
-  }
-
   /* ---- parallax ---- */
   const px = [...document.querySelectorAll('[data-parallax]')];
   if (px.length && !reduced && matchMedia('(min-width:761px)').matches) {
@@ -268,6 +248,13 @@
   /* ---- lead form ---- */
   const form = document.getElementById('leadForm');
   if (form) {
+    form.addEventListener('focusin', () => document.body.classList.add('form-active'));
+    form.addEventListener('focusout', () => {
+      setTimeout(() => {
+        if (!form.contains(document.activeElement)) document.body.classList.remove('form-active');
+      }, 80);
+    });
+
     function setFieldError(inputEl, errEl, message) {
       inputEl.classList.toggle('invalid', !!message);
       inputEl.setAttribute('aria-invalid', message ? 'true' : 'false');
@@ -316,14 +303,14 @@
         '<div class="form-done">' +
           '<span class="fd-gem">◆</span>' +
           '<h3>Đã gửi yêu cầu</h3>' +
-          '<p>Cảm ơn bạn. Chuyên gia ThreeTrees Wedding sẽ liên hệ trong vòng 24 giờ.</p>' +
+          '<p>Cảm ơn bạn. ThreeTrees Wedding sẽ liên hệ trong vòng 24 giờ để tư vấn mẫu và khoảng giá.</p>' +
         '</div>';
       const mt = document.getElementById('modalTitle');
       const mm = document.getElementById('modalMsg');
       if (mt) mt.textContent = 'Cảm ơn ' + nameShort;
       if (mm) mm.innerHTML = n
-        ? 'ThreeTrees Wedding đã ghi nhận <b>' + n + ' mẫu</b> bạn quan tâm. Chuyên gia của Maison sẽ liên hệ tư vấn & báo giá riêng cho bạn trong vòng 24 giờ.'
-        : 'ThreeTrees Wedding đã nhận được thông tin của bạn. Chuyên gia của Maison sẽ liên hệ tư vấn trong vòng 24 giờ.';
+        ? 'ThreeTrees Wedding đã ghi nhận <b>' + n + ' mẫu</b> bạn quan tâm. Đội ngũ tư vấn sẽ liên hệ để gợi ý chất liệu, khoảng giá và lịch xem mẫu phù hợp.'
+        : 'ThreeTrees Wedding đã nhận được thông tin của bạn. Đội ngũ tư vấn sẽ liên hệ trong vòng 24 giờ.';
       openModal();
     });
   }
@@ -347,67 +334,4 @@
   }
   document.querySelectorAll('#thankModal [data-close]').forEach(el => el.addEventListener('click', closeModal));
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
-
-  /* ---- quiz: gợi ý mẫu theo câu chuyện ---- */
-  const RING_TAGS = {
-    'memory-note':      { style: 'toi-gian', metal: 'trang', value: 'binh-di' },
-    'imperfect-facets': { style: 'hien-dai', metal: 'hong',  value: 'ca-tinh' },
-    'duong-van':        { style: 'co-dien',  metal: 'vang',  value: 'ben-vung' },
-    'red-field':        { style: 'hien-dai', metal: 'hong',  value: 'ca-tinh' },
-    'the-bridge':       { style: 'co-dien',  metal: 'trang', value: 'ben-vung' },
-    'threetrees':       { style: 'hien-dai', metal: 'hong',  value: 'ca-tinh' },
-    'again-again':      { style: 'toi-gian', metal: 'hong',  value: 'binh-di' },
-    'chung-ta':         { style: 'toi-gian', metal: 'trang', value: 'ben-vung' },
-    'the-shape-of-us':  { style: 'hien-dai', metal: 'trang', value: 'ca-tinh' },
-    'loi-ve':           { style: 'toi-gian', metal: 'hong',  value: 'ben-vung' }
-  };
-  const quizCard = document.querySelector('.quiz-card');
-  if (quizCard) {
-    const answers = {};
-    quizCard.querySelectorAll('.quiz-q').forEach(q => {
-      q.querySelectorAll('.quiz-opts button').forEach(b => {
-        b.addEventListener('click', () => {
-          q.querySelectorAll('.quiz-opts button').forEach(x => x.classList.remove('on'));
-          b.classList.add('on');
-          answers[q.dataset.q] = b.dataset.v;
-          document.getElementById('quizSubmit').disabled = Object.keys(answers).length < 3;
-        });
-      });
-    });
-    document.getElementById('quizSubmit').addEventListener('click', () => {
-      const scored = RINGS.map(r => {
-        const t = RING_TAGS[r.id] || {};
-        let s = 0;
-        if (t.style === answers.style) s += 2;
-        if (t.metal === answers.metal) s += 2;
-        if (t.value === answers.value) s += 1;
-        return { r, s };
-      }).sort((a, b) => b.s - a.s).slice(0, 3);
-      const res = document.getElementById('quizResult');
-      res.innerHTML =
-        '<span class="qr-eyebrow">Dựa trên câu trả lời của hai bạn</span>' +
-        '<div class="qr-head">Gợi ý dành riêng cho hai bạn</div>' +
-        '<div class="qr-grid">' + scored.map((o, i) =>
-          '<div class="qr-item' + (i === 0 ? ' best' : '') + '">' +
-            '<div class="qr-img">' +
-              (i === 0 ? '<span class="qr-best">★ Phù hợp nhất</span>' : '') +
-              '<span class="qr-tag">' + o.r.metal + '</span>' +
-              '<img src="' + o.r.img + '" alt="Nhẫn ' + o.r.name + '" loading="lazy" />' +
-            '</div>' +
-            '<div class="qr-info">' +
-              '<span class="qr-no">Gợi ý 0' + (i + 1) + '</span>' +
-              '<b>' + o.r.name + '</b>' +
-              '<span class="qr-essence">' + o.r.essence + '</span>' +
-              '<p class="qr-desc">' + o.r.desc + '</p>' +
-              '<button type="button" class="qr-add" data-add="' + o.r.id + '" aria-pressed="false"><span class="i">+</span> <span class="l">Thêm vào buổi tư vấn</span></button>' +
-            '</div>' +
-          '</div>').join('') + '</div>' +
-        '<div class="qr-hint">← Vuốt để xem các mẫu khác →</div>' +
-        '<a href="#collection" class="qr-all">Xem toàn bộ bộ sưu tập →</a>';
-      res.classList.add('show');
-      res.querySelectorAll('[data-add]').forEach(btn => btn.addEventListener('click', (e) => { e.stopPropagation(); toggle(btn.dataset.add); }));
-      syncAll();
-      res.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    });
-  }
 })();
