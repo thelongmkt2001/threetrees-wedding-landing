@@ -223,7 +223,7 @@ section{position:relative;padding:8rem var(--pad)}
 .spot{position:relative;background:var(--forest-deep);color:var(--bone);padding:0;overflow:hidden;border-top:1px solid var(--line-dark);border-bottom:1px solid var(--line-dark);display:grid;grid-template-columns:1.05fr .95fr;align-items:stretch}
 .spot::before{content:"";position:absolute;top:50%;right:20%;width:64vmin;height:64vmin;transform:translateY(-50%);background:radial-gradient(circle,rgba(230,208,154,.13),transparent 62%);pointer-events:none;z-index:0}
 .spot-media{position:relative;margin:0;min-height:min(72vh,620px);overflow:hidden}
-.spot-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 55%}
+.spot-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:44% 56%}
 .spot-media::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(27,36,21,.3),transparent 26%,transparent 74%,rgba(27,36,21,.9))}
 .spot-tag{position:absolute;left:1.4rem;bottom:1.4rem;z-index:2;display:flex;align-items:center;gap:.7rem;font-family:var(--sans);font-size:.56rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-bright);text-shadow:0 1px 10px rgba(0,0,0,.45)}
 .spot-tag::before{content:"";width:34px;height:1px;background:currentColor;opacity:.65}
@@ -552,8 +552,8 @@ body.form-active .mobile-bar{transform:translateY(105%);pointer-events:none}
   .spot{grid-template-columns:1fr}
   .spot::before{display:none}
   .spot-media{min-height:0;aspect-ratio:1/1;max-height:66vh}
-  .spot-media img{object-position:50% 44%}
-  .spot-media::after{background:linear-gradient(180deg,transparent 52%,rgba(15,21,11,.72))}
+  .spot-media img{object-position:46% 50%}
+  .spot-media::after{background:linear-gradient(180deg,transparent 62%,rgba(15,21,11,.72))}
   .spot-body{padding:2.3rem var(--pad) 3rem;max-width:none}
   .spot-eyebrow{font-size:.56rem;letter-spacing:.24em}
   .spot-name{font-size:clamp(2.5rem,11vw,3.3rem);margin:.75rem 0 .85rem}
