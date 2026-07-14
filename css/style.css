@@ -631,8 +631,8 @@ body.form-active .mobile-bar{transform:translateY(105%);pointer-events:none}
   .ring-card:hover{transform:none}
   .ring-thumb{aspect-ratio:auto;height:100%;min-height:146px}
   .ring-body{padding:.85rem .9rem;min-width:0}
-  .ring-body .meta{font-size:.52rem;letter-spacing:.1em;margin-bottom:.32rem}
-  .ring-body h3{font-size:1.22rem;line-height:1.12;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:auto}
+  .ring-body .meta{font-size:.52rem;letter-spacing:.1em;margin-bottom:.32rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .ring-body h3{font-size:1.22rem;line-height:1.12;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:2.24em}
   .ring-body .essence{display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;font-size:.86rem;line-height:1.28;margin:.28rem 0 0}
   .ring-body p{display:none}
   .ring-select{margin-top:.65rem;align-self:flex-start;width:auto;min-width:132px;padding:.56rem .8rem;font-size:.54rem;letter-spacing:.08em;gap:.28rem}

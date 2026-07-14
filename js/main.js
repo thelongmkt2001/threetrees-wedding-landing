@@ -19,24 +19,24 @@
 
   /* ---- ring data ---- */
   const RINGS = [
-    {id:"memory-note", name:"Memory Note", metal:"Vàng trắng", essence:"Ký ức nhỏ, tình yêu lớn", img:"assets/rings/memory-note.jpg",
-     desc:"Bề mặt có nhiều mặt cắt nhỏ, tạo hiệu ứng ánh sáng thay đổi khi đeo. Mẫu này hợp với cặp đôi thích chi tiết thủ công nhưng vẫn muốn dáng nhẫn gọn, dễ dùng hằng ngày."},
+    {id:"memory-note", name:"Memory Note", metal:"Vàng trắng", essence:"Ký ức nhỏ làm nên tình yêu lớn", img:"assets/rings/memory-note.jpg",
+     desc:"Bề mặt gồm những mặt cắt thủ công liên tiếp, mỗi mặt như một ký ức được lưu giữ. Khi ánh sáng chuyển động, từng góc nhẫn phản chiếu một sắc độ riêng."},
     {id:"imperfect-facets", name:"Imperfect Facets", metal:"Vàng hồng", essence:"Không hoàn hảo mà trọn vẹn", img:"assets/rings/imperfect-facets.jpg",
-     desc:"Các mặt cắt bất đối xứng tạo cảm giác tự nhiên, không quá bóng bẩy. Phù hợp với người thích vàng hồng và muốn bề mặt nhẫn có dấu ấn riêng khi nhìn gần."},
-    {id:"duong-van", name:"Đường Vân", metal:"Vàng vàng", essence:"Mọi hành trình đều hội tụ", img:"assets/rings/duong-van.jpg",
-     desc:"Bề mặt được xử lý bằng các đường vân liên tiếp, tạo độ sâu mà vẫn giữ dáng nhẫn đơn giản. Đây là lựa chọn dễ đeo cho cặp đôi thích vàng vàng và chi tiết tinh tế."},
+     desc:"Những mặt cắt bất đối xứng khiến mỗi góc bắt sáng một kiểu riêng — như chính những điều không hoàn hảo lại làm nên một tình yêu trọn vẹn."},
+    {id:"duong-van", name:"Đường Vân", metal:"Vàng vàng", essence:"Mọi trải nghiệm đều hội tụ", img:"assets/rings/duong-van.jpg",
+     desc:"Những đường vân chạm khắc thủ công cao thấp khác nhau nhưng cùng khép lại trong một vòng tròn — như mọi điều hai người đã cùng nhau bước qua."},
     {id:"red-field", name:"Red Field", metal:"Vàng hồng · Kim cương", essence:"Khác biệt được tôn vinh", img:"assets/rings/red-field.jpg",
-     desc:"Hai chiếc nhẫn dùng cùng nền vàng hồng nhưng khác sắc thái qua kim cương trắng và kim cương đen. Mẫu này hợp với cặp đôi muốn có cá tính rõ nhưng vẫn nhìn cùng bộ."},
+     desc:"Cùng một khối vàng hồng và ngôn ngữ tạo hình, hai chiếc mang hai sắc thái qua kim cương trắng và kim cương đen — khác biệt không bị xóa bỏ mà được tôn vinh."},
     {id:"the-bridge", name:"The Bridge", metal:"Vàng trắng", essence:"Nhịp cầu của sự đồng hành", img:"assets/rings/the-bridge.jpg",
-     desc:"Thiết kế có các đường nối đều trên thân nhẫn, tạo điểm nhận diện vừa đủ. Phù hợp với người thích vàng trắng, dáng gọn và muốn đeo thoải mái lâu dài."},
+     desc:"Họa tiết trên thân nhẫn như những mắt nối liên tiếp, gợi nhắc một nhịp cầu bền vững — tình yêu tạo nên từ vô vàn lần chọn bước tiếp cùng nhau."},
     {id:"again-again", name:"Again & Again", metal:"Vàng hồng · Kim cương", essence:"Yêu thương lặp lại mỗi ngày", img:"assets/rings/again-again.jpg",
-     desc:"Dải kim cương nhỏ chạy theo đường cong mềm, tạo cảm giác sáng nhưng không quá nặng. Mẫu này hợp với cô dâu thích sự nữ tính, nhẹ và dễ phối với nhẫn đính hôn."},
+     desc:"Dải kim cương nhỏ nối tiếp theo đường cong mềm mại, tượng trưng cho những khoảnh khắc yêu thương âm thầm mà bền bỉ, được nuôi dưỡng mỗi ngày."},
     {id:"chung-ta", name:"Chúng Ta Thuộc Về Nhau", metal:"Vàng trắng", essence:"Lời hứa chỉ hai người hiểu", img:"assets/rings/chung-ta.jpg",
-     desc:"Bên ngoài tối giản, điểm nhấn nằm ở phần khắc bên trong thân nhẫn. Phù hợp với cặp đôi thích nhẫn cưới kín đáo, ít chi tiết bên ngoài nhưng có ý nghĩa riêng."},
+     desc:"Bên ngoài tối giản, giữ lời hứa được khắc bên trong thân nhẫn — không dành cho thế giới nhìn thấy, chỉ để mỗi ngày nhắc hai bạn vì sao đã chọn nhau."},
     {id:"the-shape-of-us", name:"The Shape Of Us", metal:"Vàng trắng · Kim cương", essence:"Hai bản thể, một hành trình", img:"assets/rings/the-shape-of-us.jpg",
-     desc:"Hai chiếc nhẫn giữ cùng ngôn ngữ thiết kế nhưng khác mức độ điểm đá và bề mặt. Phù hợp với cặp đôi muốn đồng bộ khi đeo cùng nhau mà không cần giống hệt."},
-    {id:"loi-ve", name:"Lối Về", metal:"Vàng hồng 18K", essence:"Không giữ nhau, nhưng luôn có nhau", img:"assets/rings/loi-ve.jpg",
-     desc:"Nhẫn nam tối giản với bề mặt xước mờ, nhẫn nữ nổi bật bằng chi tiết lá vàng hồng ôm kim cương. Mẫu này hợp với người thích vàng hồng, dáng mềm và cảm giác lãng mạn vừa đủ."}
+     desc:"Cùng một ngôn ngữ thiết kế nhưng khác ở chi tiết: một chiếc tối giản, một chiếc điểm kim cương trên chính những đường nét ấy — mỗi người vẫn tỏa sáng theo cách riêng."},
+    {id:"loi-ve", name:"Lối Về", metal:"Vàng hồng 18K · Kim cương marquise", essence:"Không giống nhau nhưng mãi mãi thuộc về nhau", img:"assets/rings/loi-ve.jpg",
+     desc:"Một chiếc nở rộ bởi những viên kim cương như vòng hoa khoe sắc, chiếc còn lại tối giản và vững chãi — hai ngôn ngữ khác biệt cùng thuộc về một hành trình."}
   ];
 
   /* ---- loader ---- */
