@@ -32,7 +32,7 @@
     {id:"again-again", name:"Again & Again", metal:"Vàng hồng · Kim cương", essence:"Yêu thương lặp lại mỗi ngày", img:"assets/rings/again-again.jpg",
      desc:"Dải kim cương nhỏ nối tiếp theo đường cong mềm mại, tượng trưng cho những khoảnh khắc yêu thương âm thầm mà bền bỉ, được nuôi dưỡng mỗi ngày."},
     {id:"chung-ta", name:"Chúng Ta Thuộc Về Nhau", metal:"Vàng trắng", essence:"Lời hứa chỉ hai người hiểu", img:"assets/rings/chung-ta.jpg",
-     desc:"Bên ngoài tối giản, giữ lời hứa được khắc bên trong thân nhẫn — không dành cho thế giới nhìn thấy, chỉ để mỗi ngày nhắc hai bạn vì sao đã chọn nhau."},
+     desc:"Bên ngoài tối giản, lời hứa được khắc kín bên trong thân nhẫn — không dành cho thế giới nhìn thấy, chỉ để mỗi ngày nhắc hai bạn vì sao đã chọn nhau."},
     {id:"the-shape-of-us", name:"The Shape Of Us", metal:"Vàng trắng · Kim cương", essence:"Hai bản thể, một hành trình", img:"assets/rings/the-shape-of-us.jpg",
      desc:"Cùng một ngôn ngữ thiết kế nhưng khác ở chi tiết: một chiếc tối giản, một chiếc điểm kim cương trên chính những đường nét ấy — mỗi người vẫn tỏa sáng theo cách riêng."},
     {id:"loi-ve", name:"Lối Về", metal:"Vàng hồng 18K · Kim cương marquise", essence:"Không giống nhau nhưng mãi mãi thuộc về nhau", img:"assets/rings/loi-ve.jpg",
