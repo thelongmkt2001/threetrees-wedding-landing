@@ -348,7 +348,7 @@ section{position:relative;padding:8rem var(--pad)}
 .priv{background:var(--cream)}
 .priv .wrap{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
 .priv-media{position:relative;overflow:hidden;padding:15px;background:var(--paper);box-shadow:var(--shadow-soft)}
-.priv-media img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:68% 50%;transition:filter 1.4s var(--ease)}
+.priv-media img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:center 50%;transition:filter 1.4s var(--ease)}
 .priv-media:hover img{filter:contrast(1.04) brightness(1.02)}
 .priv-media::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 1px var(--line-gold);pointer-events:none;z-index:2}
 .priv h2{font-size:clamp(2rem,4vw,3rem);color:var(--forest);margin:.7rem 0 1rem;line-height:1.14}
