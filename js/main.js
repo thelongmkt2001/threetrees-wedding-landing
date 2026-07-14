@@ -23,7 +23,7 @@
      desc:"Bề mặt gồm những mặt cắt thủ công liên tiếp, mỗi mặt như một ký ức được lưu giữ. Khi ánh sáng chuyển động, từng góc nhẫn phản chiếu một sắc độ riêng."},
     {id:"imperfect-facets", name:"Imperfect Facets", metal:"Vàng hồng", essence:"Không hoàn hảo mà trọn vẹn", img:"assets/rings/imperfect-facets.jpg",
      desc:"Những mặt cắt bất đối xứng khiến mỗi góc bắt sáng một kiểu riêng — như chính những điều không hoàn hảo lại làm nên một tình yêu trọn vẹn."},
-    {id:"duong-van", name:"Đường Vân", metal:"Vàng vàng", essence:"Mọi trải nghiệm đều hội tụ", img:"assets/rings/duong-van.jpg",
+    {id:"duong-van", name:"Đường Vân", metal:"Vàng 18K", essence:"Mọi trải nghiệm đều hội tụ", img:"assets/rings/duong-van.jpg",
      desc:"Những đường vân chạm khắc thủ công cao thấp khác nhau nhưng cùng khép lại trong một vòng tròn — như mọi điều hai người đã cùng nhau bước qua."},
     {id:"red-field", name:"Red Field", metal:"Vàng hồng · Kim cương", essence:"Khác biệt được tôn vinh", img:"assets/rings/red-field.jpg",
      desc:"Cùng một khối vàng hồng và ngôn ngữ tạo hình, hai chiếc mang hai sắc thái qua kim cương trắng và kim cương đen — khác biệt không bị xóa bỏ mà được tôn vinh."},
