@@ -169,10 +169,6 @@ body.drawer-open .nav .menu-btn span,body.drawer-open .nav.scrolled .menu-btn sp
 .btn-line::before{content:"";position:absolute;inset:0;background:var(--forest);transform:scaleX(0);transform-origin:left;z-index:1;transition:transform .55s var(--ease)}
 .btn-line:hover{color:var(--paper)}
 .btn-line:hover::before{transform:scaleX(1)}
-.btn-line-light{color:var(--bone);border:1px solid var(--line-dark)}
-.btn-line-light::before{content:"";position:absolute;inset:0;background:var(--bone);transform:scaleX(0);transform-origin:left;z-index:1;transition:transform .55s var(--ease)}
-.btn-line-light:hover{color:var(--forest);border-color:var(--bone)}
-.btn-line-light:hover::before{transform:scaleX(1)}
 .btn.full{width:100%}
 
 /* ---------- section scaffold ---------- */
@@ -242,7 +238,7 @@ section{position:relative;padding:8rem var(--pad)}
 .spot-poem p{font-family:var(--serif);font-style:italic;font-size:clamp(1.02rem,1.35vw,1.15rem);line-height:1.65;color:var(--bone-dim);margin-bottom:1.05rem}
 .spot-poem em{color:var(--gold-bright);font-style:italic}
 .spot-cta{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:1.8rem}
-.spot .spot-cta .sbtn{border-color:var(--gold-2);color:var(--gold-bright)}
+.spot .spot-cta .sbtn{background:transparent;border-color:var(--gold-2);color:var(--gold-bright)}
 .spot .spot-cta .sbtn:hover,.spot .spot-cta .sbtn.on{background:var(--gold-2);color:#2c2207}
 .spot-cta .sbtn,.spot-cta .btn{min-height:56px}
 
@@ -258,9 +254,6 @@ section{position:relative;padding:8rem var(--pad)}
 .maison-proof span{grid-row:span 2;font-family:var(--display);font-style:italic;font-size:1.55rem;line-height:1;color:var(--gold-text);padding-top:.12rem}
 .maison-proof h3{font-size:1.22rem;font-weight:400;color:var(--forest);margin:0 0 .25rem}
 .maison-proof p{color:var(--ink-soft);font-size:.92rem;line-height:1.75;max-width:500px}
-.text-link{display:inline-flex;align-items:center;gap:.65rem;margin-top:1.8rem;font-family:var(--sans);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--forest);font-weight:500}
-.text-link::after{content:"";width:42px;height:1px;background:var(--gold);transition:width .35s var(--ease)}
-.text-link:hover::after{width:64px}
 .maison-visual{position:relative;min-height:600px}
 .maison-figure,.maison-inset{position:absolute;margin:0;background:var(--paper);padding:13px;border-radius:var(--radius);box-shadow:0 34px 90px -48px rgba(38,51,31,.65)}
 .maison-figure{inset:0 7% auto 0}
@@ -366,7 +359,6 @@ section{position:relative;padding:8rem var(--pad)}
 .priv li{display:flex;gap:1rem;align-items:flex-start;font-size:.99rem}
 .priv li .di{flex:none;color:var(--gold);margin-top:6px;font-size:.7rem}
 .priv li b{color:var(--forest);font-weight:500}
-.priv-cta{margin-top:2rem}
 
 /* ---------- proof ---------- */
 .proof{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -598,8 +590,6 @@ body.form-active .mobile-bar{transform:translateY(105%);pointer-events:none}
   .feat-text p{font-size:.96rem}
   .priv ul{margin-top:1.4rem;gap:.95rem}
   .priv li{font-size:.96rem}
-  /* sticky CTA bar đã luôn hiện trên mobile → bớt nút lặp sau form */
-  .priv-cta{display:none}
   .appoint-intro h2{margin-bottom:1.2rem}
   .ap-lead{margin-bottom:1.8rem}
   .ap-phone{font-size:1.3rem;margin-top:1.6rem}
@@ -659,7 +649,6 @@ body.form-active .mobile-bar{transform:translateY(105%);pointer-events:none}
   .maison-mark span{font-size:2.25rem}
   .maison-mark small{font-size:.48rem;letter-spacing:.1em}
   .maison-lead{font-size:.94rem;line-height:1.75;margin-bottom:1.6rem}
-  .text-link{font-size:.66rem;letter-spacing:.08em;line-height:1.45;align-items:flex-start;padding:.55rem 0;min-height:24px}
   .btn{font-size:.64rem;padding:1.05rem 1.5rem;min-height:52px;letter-spacing:.14em}
   .selhint{font-size:.88rem;letter-spacing:0;padding:0;max-width:100%;line-height:1.55}
   .selhint::before,.selhint::after{width:18px}
