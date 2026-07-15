@@ -88,9 +88,15 @@
       const card = document.createElement('div');
       card.className = 'ring-card';
       card.dataset.id = r.id;
+      // thumb render 115–380px tuỳ breakpoint → phục vụ webp 400/800 thay vì jpg gốc
+      const base = r.img.replace(/\.jpg$/, '');
       card.innerHTML =
         '<div class="ring-thumb">' +
-          '<img src="' + r.img + '" alt="Nhẫn cưới ' + r.name + '" loading="lazy" />' +
+          '<picture>' +
+            '<source type="image/webp" sizes="(max-width:520px) 35vw, (max-width:860px) 45vw, 30vw" srcset="' +
+              base + '-400.webp 400w, ' + base + '.webp 800w" />' +
+            '<img src="' + r.img + '" alt="Nhẫn cưới ' + r.name + '" loading="lazy" />' +
+          '</picture>' +
         '</div>' +
         '<div class="ring-body">' +
           '<div class="meta">' + r.metal + '</div>' +
