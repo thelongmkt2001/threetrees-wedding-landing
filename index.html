@@ -52,7 +52,7 @@
     <a href="#showroom">Liên hệ</a>
   </nav>
   <div class="nav-right">
-    <a href="tel:0862760663" class="nav-phone">☎ 0862.760.663</a>
+    <a href="tel:0862760663" class="nav-phone">☎︎ 0862.760.663</a>
     <a href="#form" class="nav-appoint">Nhận tư vấn</a>
     <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false" aria-controls="drawer"><span></span><span></span><span></span></button>
   </div>
@@ -72,7 +72,7 @@
   </nav>
   <div class="drawer-foot">
     <a href="#form" class="btn btn-gold full"><span>Nhận tư vấn</span></a>
-    <a href="tel:0862760663" class="drawer-phone">☎ 0862.760.663</a>
+    <a href="tel:0862760663" class="drawer-phone">☎︎ 0862.760.663</a>
     <span class="drawer-addr">15 Nhà Thờ, Hoàn Kiếm, Hà Nội</span>
   </div>
 </div>
@@ -86,7 +86,7 @@
   <div class="hero-inner">
     <div class="hero-kicker">Crafting Your Love Story</div>
     <h1 class="hero-title">Every Love Story<br />Deserves an <em class="gold">Heirloom</em></h1>
-    <p class="hero-lead">Mỗi cặp nhẫn cưới được chế tác từ câu chuyện của riêng hai bạn — triết lý Memory-Crafted, kế thừa 143 năm di sản kim hoàn Antwerp. Hãy để lại thông tin và bắt đầu buổi tư vấn thiết kế riêng.</p>
+    <p class="hero-lead">Cặp nhẫn cưới được chế tác từ chính câu chuyện của hai bạn — triết lý Memory-Crafted, kế thừa 143 năm di sản kim hoàn Antwerp.</p>
     <div class="hero-proof">
       <span>Nền tảng Antwerp 143 năm</span>
       <span>Tư vấn riêng tại 15 Nhà Thờ</span>
@@ -312,16 +312,15 @@
 <section class="appoint" id="form">
   <div class="wrap appoint-inner">
     <div class="appoint-intro rv">
-      <span class="eyebrow">Nhận tư vấn mẫu &amp; khoảng giá</span>
-      <h2>Gửi mẫu bạn thích, nhận gợi ý rõ ràng trước khi đến showroom</h2>
-      <p class="ap-lead">Để lại số điện thoại và mẫu bạn quan tâm. Chuyên gia ThreeTrees Wedding sẽ liên hệ trong vòng 24 giờ để tư vấn chất liệu, khoảng giá và thời điểm xem mẫu phù hợp.</p>
+      <span class="eyebrow">Đặt lịch tư vấn riêng</span>
+      <h2>Chọn ngày giờ, chúng tôi chuẩn bị sẵn mẫu cho bạn</h2>
+      <p class="ap-lead">Đội ngũ sẽ gọi xác nhận lịch và chuẩn bị đúng mẫu bạn quan tâm tại showroom 15 Nhà Thờ.</p>
       <div class="ap-assure">
         <div><span class="c">✓</span> Chưa cần đặt cọc hay cam kết mua</div>
         <div><span class="c">✓</span> Gợi ý khoảng giá theo mẫu &amp; chất liệu</div>
-        <div><span class="c">✓</span> Thông tin của bạn chỉ dùng để tư vấn</div>
+        <div><span class="c">✓</span> Thông tin chỉ dùng để tư vấn</div>
       </div>
-      <p class="ap-invest">Nếu hai bạn muốn xem trực tiếp, đội ngũ sẽ chuẩn bị sẵn mẫu phù hợp tại showroom 15 Nhà Thờ để buổi hẹn trọn vẹn và riêng tư hơn.</p>
-      <div class="ap-phone">Hoặc gọi tư vấn nhanh: 0862.760.663</div>
+      <div class="ap-phone">Hoặc gọi nhanh: 0862.760.663</div>
     </div>
 
     <div class="rv" id="formInner">
@@ -335,37 +334,47 @@
           <input type="text" name="name" id="fName" placeholder="Tên của bạn" required aria-describedby="fNameErr" />
           <span class="fld-err" id="fNameErr" role="alert"></span>
         </div>
+        <div class="fld">
+          <label for="fPhone">Số điện thoại <span class="req">*</span></label>
+          <input type="tel" name="phone" id="fPhone" inputmode="numeric" placeholder="09xx xxx xxx" required aria-describedby="fPhoneHint fPhoneErr" />
+          <span class="fld-hint" id="fPhoneHint">Chỉ dùng để chuyên gia liên hệ tư vấn.</span>
+          <span class="fld-err" id="fPhoneErr" role="alert"></span>
+        </div>
         <div class="fld2">
           <div class="fld">
-            <label for="fPhone">Số điện thoại <span class="req">*</span></label>
-            <input type="tel" name="phone" id="fPhone" inputmode="numeric" placeholder="09xx xxx xxx" required aria-describedby="fPhoneHint fPhoneErr" />
-            <span class="fld-hint" id="fPhoneHint">Chỉ dùng để chuyên gia liên hệ tư vấn.</span>
-            <span class="fld-err" id="fPhoneErr" role="alert"></span>
+            <label for="fDate">Ngày hẹn <span class="req">*</span></label>
+            <input type="date" name="ngay_hen" id="fDate" required aria-describedby="fDateErr" />
+            <span class="fld-err" id="fDateErr" role="alert"></span>
           </div>
           <div class="fld">
-            <label for="fDate">Ngày cưới dự kiến</label>
-            <input type="date" name="wedding_date" id="fDate" />
+            <label for="fTime">Giờ hẹn <span class="req">*</span></label>
+            <select name="gio_hen" id="fTime" required aria-describedby="fTimeErr">
+              <option value="">Chọn giờ</option>
+              <option value="09:00">09:00</option>
+              <option value="10:00">10:00</option>
+              <option value="11:00">11:00</option>
+              <option value="14:00">14:00</option>
+              <option value="15:00">15:00</option>
+              <option value="16:00">16:00</option>
+              <option value="17:00">17:00</option>
+              <option value="18:00">18:00</option>
+              <option value="19:00">19:00</option>
+              <option value="20:00">20:00</option>
+            </select>
+            <span class="fld-err" id="fTimeErr" role="alert"></span>
           </div>
         </div>
-        <div class="fld">
-          <label id="slotLabel">Thời gian bạn tiện nghe tư vấn</label>
-          <div class="slotchips" role="radiogroup" aria-labelledby="slotLabel">
-            <label class="slot"><input type="radio" name="thoi_gian_hen" value="Buổi sáng" /><span>Buổi sáng</span></label>
-            <label class="slot"><input type="radio" name="thoi_gian_hen" value="Buổi chiều" /><span>Buổi chiều</span></label>
-            <label class="slot"><input type="radio" name="thoi_gian_hen" value="Buổi tối" /><span>Buổi tối</span></label>
-            <label class="slot"><input type="radio" name="thoi_gian_hen" value="Cuối tuần" /><span>Cuối tuần</span></label>
-          </div>
-        </div>
+        <p class="fld-hint book-hint">Showroom mở 9:00 – 21:00 hằng ngày. Đội ngũ sẽ gọi xác nhận lại lịch với bạn.</p>
         <div class="fld">
           <label for="fNote">Ghi chú thêm (không bắt buộc)</label>
-          <textarea name="note" id="fNote" rows="2" placeholder="Chất liệu mong muốn, ngân sách dự kiến, cỡ tay, thời gian cưới…"></textarea>
+          <textarea name="note" id="fNote" rows="2" placeholder="Chất liệu mong muốn, ngân sách dự kiến, cỡ tay…"></textarea>
         </div>
         <input type="hidden" name="selected_rings" id="fRings" />
-        <button type="submit" class="btn btn-gold full submit-main" id="submitBtn"><span>Nhận tư vấn &amp; khoảng giá</span></button>
+        <button type="submit" class="btn btn-gold full submit-main" id="submitBtn"><span>Đặt lịch tư vấn</span></button>
         <div class="form-promise">
-          <span>01 · Xác nhận mẫu &amp; nhu cầu</span>
+          <span>01 · Gọi xác nhận lịch hẹn</span>
           <span>02 · Gợi ý chất liệu, khoảng giá</span>
-          <span>03 · Chuẩn bị mẫu nếu bạn muốn xem trực tiếp</span>
+          <span>03 · Chuẩn bị sẵn mẫu tại showroom</span>
         </div>
         <p class="form-note">Bằng việc gửi thông tin, bạn đồng ý để ThreeTrees Wedding liên hệ tư vấn.</p>
       </form>
@@ -413,20 +422,12 @@
         <div><span class="c">◆</span><a href="tel:0862760663">0862.760.663</a></div>
         <div><span class="c">◆</span><span>Mở cửa 9:00 – 21:00 hằng ngày · nên đặt lịch trước để được tư vấn riêng.</span></div>
       </div>
-      <a href="#form" class="btn btn-line showroom-cta"><span>Đặt lịch hẹn tư vấn</span></a>
     </div>
-    <a class="map-card rv" href="https://www.google.com/maps/dir/?api=1&destination=15+Nh%C3%A0+Th%E1%BB%9D,+Ho%C3%A0n+Ki%E1%BA%BFm,+H%C3%A0+N%E1%BB%99i" target="_blank" rel="noopener" aria-label="Chỉ đường tới ThreeTrees Wedding trên Google Maps">
-      <span class="map-fallback">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.4"/></svg>
-        <b>15 Nhà Thờ, Hoàn Kiếm, Hà Nội</b>
-      </span>
-      <iframe class="map-embed" title="Bản đồ ThreeTrees Wedding — 15 Nhà Thờ, Hoàn Kiếm, Hà Nội" loading="lazy"
-        src="https://www.openstreetmap.org/export/embed.html?bbox=105.84490%2C21.02480%2C105.85290%2C21.03280&layer=mapnik&marker=21.02880%2C105.84890"></iframe>
-      <span class="map-ov">
-        <b>ThreeTrees Wedding · 15 Nhà Thờ</b>
-        <span class="go">Chỉ đường trên Google Maps →</span>
-      </span>
-    </a>
+    <div class="map-card rv">
+      <iframe class="map-embed" title="Bản đồ THREE TREES — 15 Nhà Thờ, Hoàn Kiếm, Hà Nội" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://maps.google.com/maps?q=THREE%20TREES%2C%2015%20Nh%C3%A0%20Th%E1%BB%9D%2C%20Ho%C3%A0n%20Ki%E1%BA%BFm%2C%20H%C3%A0%20N%E1%BB%99i&amp;ll=21.0288851,105.8498545&amp;z=17&amp;output=embed"></iframe>
+      <a class="map-go" href="https://maps.app.goo.gl/oKfnCc17wV6fd7T9A" target="_blank" rel="noopener">Chỉ đường trên Google Maps →</a>
+    </div>
   </div>
 </section>
 </main>
@@ -470,7 +471,7 @@
   <span class="n" id="floatN">0</span> mẫu đã chọn · Nhận tư vấn →
 </button>
 <div class="mobile-bar">
-  <a href="tel:0862760663" class="btn btn-line"><span>☎ Gọi tư vấn</span></a>
+  <a href="tel:0862760663" class="btn btn-line"><span>☎︎ Gọi tư vấn</span></a>
   <a href="#form" class="btn btn-solid" id="mbPrimary"><span>Nhận tư vấn</span></a>
 </div>
 

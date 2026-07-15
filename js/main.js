@@ -66,6 +66,7 @@
       drawer.classList.toggle('open', open);
       menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
       drawer.setAttribute('aria-hidden', open ? 'false' : 'true');
+      document.body.classList.toggle('drawer-open', open);
       document.body.style.overflow = open ? 'hidden' : '';
       if (open && firstDrawerLink) firstDrawerLink.focus();
       else if (!open && returnFocus) menuBtn.focus();
@@ -249,6 +250,12 @@
   /* ---- lead form ---- */
   const form = document.getElementById('leadForm');
   if (form) {
+    // không cho đặt lịch vào ngày đã qua
+    const dateInput = document.getElementById('fDate');
+    if (dateInput) {
+      const t = new Date(); t.setMinutes(t.getMinutes() - t.getTimezoneOffset());
+      dateInput.min = t.toISOString().slice(0, 10);
+    }
     form.addEventListener('focusin', () => document.body.classList.add('form-active'));
     form.addEventListener('focusout', () => {
       setTimeout(() => {
@@ -266,14 +273,22 @@
       e.preventDefault();
       const nameEl = document.getElementById('fName');
       const phoneEl = document.getElementById('fPhone');
+      const dateEl = document.getElementById('fDate');
+      const timeEl = document.getElementById('fTime');
       const name = nameEl.value.trim();
       const phone = phoneEl.value.trim();
       const nameValid = !!name;
       const phoneValid = /^[0-9+\s().-]{8,}$/.test(phone);
+      const dateValid = !!(dateEl && dateEl.value);
+      const timeValid = !!(timeEl && timeEl.value);
       setFieldError(nameEl, document.getElementById('fNameErr'), nameValid ? '' : 'Vui lòng nhập họ và tên.');
       setFieldError(phoneEl, document.getElementById('fPhoneErr'), phoneValid ? '' : 'Số điện thoại chưa hợp lệ (tối thiểu 8 số).');
+      if (dateEl) setFieldError(dateEl, document.getElementById('fDateErr'), dateValid ? '' : 'Vui lòng chọn ngày hẹn.');
+      if (timeEl) setFieldError(timeEl, document.getElementById('fTimeErr'), timeValid ? '' : 'Vui lòng chọn giờ hẹn.');
       if (!nameValid) { nameEl.focus(); return; }
       if (!phoneValid) { phoneEl.focus(); return; }
+      if (!dateValid) { dateEl.focus(); return; }
+      if (!timeValid) { timeEl.focus(); return; }
 
       const d = new FormData(form);
       d.set('selected_rings', document.getElementById('fRings').value);
@@ -300,11 +315,15 @@
       const wrapEl = document.getElementById('formInner');
       const n = selected.size;
       const nameShort = (name.trim().split(/\s+/).slice(-1)[0]) || name;
+      const slot = (dateEl && dateEl.value)
+        ? (dateEl.value.split('-').reverse().join('/') + (timeEl && timeEl.value ? ' lúc ' + timeEl.value : ''))
+        : '';
       wrapEl.innerHTML =
         '<div class="form-done">' +
           '<span class="fd-gem">◆</span>' +
-          '<h3>Đã gửi yêu cầu</h3>' +
-          '<p>Cảm ơn bạn. ThreeTrees Wedding sẽ liên hệ trong vòng 24 giờ để tư vấn mẫu và khoảng giá.</p>' +
+          '<h3>Đã nhận lịch hẹn</h3>' +
+          '<p>Cảm ơn bạn.' + (slot ? ' Lịch hẹn <b>' + slot + '</b> đã được ghi nhận.' : '') +
+          ' ThreeTrees Wedding sẽ gọi xác nhận trong vòng 24 giờ.</p>' +
         '</div>';
       const mt = document.getElementById('modalTitle');
       const mm = document.getElementById('modalMsg');
