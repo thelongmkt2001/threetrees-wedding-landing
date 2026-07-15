@@ -12,6 +12,7 @@
 <link rel="icon" href="/favicon.ico" sizes="any" />
 <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png" />
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
 <meta name="theme-color" content="#26331F" />
 <link rel="preload" href="assets/fonts/BeautiqueDisplay-Medium.otf" as="font" type="font/otf" crossorigin />
 <link rel="preload" href="assets/fonts/FZPoppins-Light.ttf" as="font" type="font/ttf" crossorigin />
@@ -63,7 +64,7 @@
 </header>
 
 <!-- drawer -->
-<div class="drawer" id="drawer" aria-hidden="true">
+<div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Menu" aria-hidden="true">
   <div class="drawer-top">
     <span class="drawer-brand"><b>ThreeTrees</b><i>Wedding · Memory-Crafted</i></span>
   </div>
@@ -81,7 +82,7 @@
   </div>
 </div>
 
-<main id="main">
+<main id="main" tabindex="-1">
 <!-- hero -->
 <section class="hero" id="top">
   <div class="hero-portrait" data-parallax="-0.04"><img src="assets/img/hero-portrait-bw.jpg" alt="Khoảnh khắc tại không gian trải nghiệm ThreeTrees Wedding" fetchpriority="high" /></div>
@@ -442,20 +443,20 @@
     </div>
     <div class="foot-cols">
       <div>
-        <h4>Khám phá</h4>
+        <h3>Khám phá</h3>
         <a href="#featured">Yêu thích nhất</a>
         <a href="#collection">Bộ sưu tập</a>
         <a href="#atelier">Câu chuyện chế tác</a>
         <a href="#privilege">Đặc quyền</a>
       </div>
       <div>
-        <h4>Liên hệ</h4>
+        <h3>Liên hệ</h3>
         <a href="tel:0862760663">0862.760.663</a>
         <p>15 Nhà Thờ, Hoàn Kiếm, Hà Nội</p>
         <p>9:00 – 21:00 hằng ngày</p>
       </div>
       <div>
-        <h4>Đặt lịch</h4>
+        <h3>Đặt lịch</h3>
         <a href="#form">Đặt lịch tư vấn</a>
         <a href="#showroom">Ghé showroom</a>
       </div>
@@ -473,7 +474,7 @@
 </button>
 <div class="mobile-bar">
   <a href="tel:0862760663" class="btn btn-line"><span>☎︎ Gọi tư vấn</span></a>
-  <a href="#form" class="btn btn-solid" id="mbPrimary"><span>Nhận tư vấn</span></a>
+  <a href="#form" class="btn btn-gold" id="mbPrimary"><span>Nhận tư vấn</span></a>
 </div>
 
 <!-- thank-you modal -->

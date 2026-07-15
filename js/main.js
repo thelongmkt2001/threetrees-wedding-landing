@@ -68,7 +68,9 @@
       drawer.setAttribute('aria-hidden', open ? 'false' : 'true');
       document.body.classList.toggle('drawer-open', open);
       document.body.style.overflow = open ? 'hidden' : '';
-      if (open && firstDrawerLink) firstDrawerLink.focus();
+      // khoá nền khi drawer mở (chừa .nav vì nút X đóng nằm trong nav)
+      setInert(open, ['main', '.topbar', '.foot', '.mobile-bar']);
+      if (open && firstDrawerLink) requestAnimationFrame(() => requestAnimationFrame(() => firstDrawerLink.focus()));
       else if (!open && returnFocus) menuBtn.focus();
     };
     menuBtn.addEventListener('click', () => toggleDrawer(!drawer.classList.contains('open'), true));
@@ -336,16 +338,29 @@
     if (!m) return;
     modalReturnFocus = document.activeElement;
     m.classList.add('open'); m.setAttribute('aria-hidden', 'false'); document.body.style.overflow = 'hidden';
+    setInert(true);
+    // .modal còn visibility:hidden ở frame này → focus() sẽ thất bại im lặng.
+    // Đợi qua 2 frame cho style recalc xong rồi mới focus.
     const closeBtn = m.querySelector('.modal-close');
-    if (closeBtn) closeBtn.focus();
+    if (closeBtn) requestAnimationFrame(() => requestAnimationFrame(() => closeBtn.focus()));
   }
   function closeModal() {
     const m = document.getElementById('thankModal');
     if (!m) return;
     m.classList.remove('open'); m.setAttribute('aria-hidden', 'true'); document.body.style.overflow = '';
+    setInert(false);
     if (modalReturnFocus && modalReturnFocus.focus) modalReturnFocus.focus();
     modalReturnFocus = null;
   }
+  /* giữ focus trong lớp phủ: khoá phần nền lại.
+     Drawer phải chừa .nav vì nút đóng (X) nằm trong đó. */
+  function setInert(on, sels) {
+    (sels || ['main', '.topbar', '.nav', '.foot', '.mobile-bar']).forEach(sel => {
+      const el = document.querySelector(sel);
+      if (el) { if (on) el.setAttribute('inert', ''); else el.removeAttribute('inert'); }
+    });
+  }
+  window.__ttSetInert = setInert;
   document.querySelectorAll('#thankModal [data-close]').forEach(el => el.addEventListener('click', closeModal));
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
 })();
