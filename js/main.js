@@ -279,16 +279,10 @@
       const phone = phoneEl.value.trim();
       const nameValid = !!name;
       const phoneValid = /^[0-9+\s().-]{8,}$/.test(phone);
-      const dateValid = !!(dateEl && dateEl.value);
-      const timeValid = !!(timeEl && timeEl.value);
       setFieldError(nameEl, document.getElementById('fNameErr'), nameValid ? '' : 'Vui lòng nhập họ và tên.');
       setFieldError(phoneEl, document.getElementById('fPhoneErr'), phoneValid ? '' : 'Số điện thoại chưa hợp lệ (tối thiểu 8 số).');
-      if (dateEl) setFieldError(dateEl, document.getElementById('fDateErr'), dateValid ? '' : 'Vui lòng chọn ngày hẹn.');
-      if (timeEl) setFieldError(timeEl, document.getElementById('fTimeErr'), timeValid ? '' : 'Vui lòng chọn giờ hẹn.');
       if (!nameValid) { nameEl.focus(); return; }
       if (!phoneValid) { phoneEl.focus(); return; }
-      if (!dateValid) { dateEl.focus(); return; }
-      if (!timeValid) { timeEl.focus(); return; }
 
       const d = new FormData(form);
       d.set('selected_rings', document.getElementById('fRings').value);
