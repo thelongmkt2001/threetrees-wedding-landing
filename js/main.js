@@ -14,7 +14,7 @@
      Dán URL Google Apps Script (/exec) hoặc Formspree/Zapier.
      Để trống "" thì form vẫn chạy (chế độ demo, hiện màn hình cảm ơn).
      ======================================================= */
-  const FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyQ4Mfgtwhjesrs0Z39zsgBYZ9CgrnbGdHe2Y9TTcUjDd2C8akJI8nOCIeA3JNIUH3X/exec';
+  const FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzdG64giWkEZdmGKUetvv1qYLQb5OoxDNhUCZMHhhCHlcODxMR_5NuncPldH4pEbAtO/exec';
   const CONTACT_PHONE = '0862760663';
 
   /* ---- ring data ---- */
