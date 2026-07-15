@@ -282,7 +282,7 @@
       const nameEl = document.getElementById('fName');
       const phoneEl = document.getElementById('fPhone');
       const dateEl = document.getElementById('fDate');
-      const timeEl = document.getElementById('fTime');
+      const timeEl = form.querySelector('input[name="gio_hen"]:checked');
       const name = nameEl.value.trim();
       const phone = phoneEl.value.trim();
       const nameValid = !!name;
@@ -317,9 +317,11 @@
       const wrapEl = document.getElementById('formInner');
       const n = selected.size;
       const nameShort = (name.trim().split(/\s+/).slice(-1)[0]) || name;
-      const slot = (dateEl && dateEl.value)
-        ? (dateEl.value.split('-').reverse().join('/') + (timeEl && timeEl.value ? ' lúc ' + timeEl.value : ''))
-        : '';
+      const dPart = dateEl && dateEl.value ? dateEl.value.split('-').reverse().join('/') : '';
+      const tPart = timeEl ? timeEl.value : '';
+      const slot = dPart
+        ? (dPart + (tPart ? ' lúc ' + tPart : ''))
+        : (tPart ? 'khung ' + tPart : '');
       wrapEl.innerHTML =
         '<div class="form-done">' +
           '<span class="fd-gem">◆</span>' +

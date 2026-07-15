@@ -344,28 +344,24 @@
           <span class="fld-hint" id="fPhoneHint">Chỉ dùng để chuyên gia liên hệ tư vấn.</span>
           <span class="fld-err" id="fPhoneErr" role="alert"></span>
         </div>
-        <div class="fld2">
-          <div class="fld">
-            <label for="fDate">Ngày hẹn</label>
-            <input type="date" name="ngay_hen" id="fDate" aria-describedby="fDateErr" />
-            <span class="fld-err" id="fDateErr" role="alert"></span>
-          </div>
-          <div class="fld">
-            <label for="fTime">Giờ hẹn</label>
-            <select name="gio_hen" id="fTime" aria-describedby="fTimeErr">
-              <option value="">Chọn giờ</option>
-              <option value="09:00">09:00</option>
-              <option value="10:00">10:00</option>
-              <option value="11:00">11:00</option>
-              <option value="14:00">14:00</option>
-              <option value="15:00">15:00</option>
-              <option value="16:00">16:00</option>
-              <option value="17:00">17:00</option>
-              <option value="18:00">18:00</option>
-              <option value="19:00">19:00</option>
-              <option value="20:00">20:00</option>
-            </select>
-            <span class="fld-err" id="fTimeErr" role="alert"></span>
+        <div class="fld">
+          <label for="fDate">Ngày hẹn</label>
+          <input type="date" name="ngay_hen" id="fDate" aria-describedby="fDateErr" />
+          <span class="fld-err" id="fDateErr" role="alert"></span>
+        </div>
+        <div class="fld">
+          <label id="timeLabel">Giờ hẹn</label>
+          <div class="timepills" role="radiogroup" aria-labelledby="timeLabel">
+            <label class="tp"><input type="radio" name="gio_hen" value="09:00" /><span>09:00</span></label>
+            <label class="tp"><input type="radio" name="gio_hen" value="10:00" /><span>10:00</span></label>
+            <label class="tp"><input type="radio" name="gio_hen" value="11:00" /><span>11:00</span></label>
+            <label class="tp"><input type="radio" name="gio_hen" value="14:00" /><span>14:00</span></label>
+            <label class="tp"><input type="radio" name="gio_hen" value="15:00" /><span>15:00</span></label>
+            <label class="tp"><input type="radio" name="gio_hen" value="16:00" /><span>16:00</span></label>
+            <label class="tp"><input type="radio" name="gio_hen" value="17:00" /><span>17:00</span></label>
+            <label class="tp"><input type="radio" name="gio_hen" value="18:00" /><span>18:00</span></label>
+            <label class="tp"><input type="radio" name="gio_hen" value="19:00" /><span>19:00</span></label>
+            <label class="tp"><input type="radio" name="gio_hen" value="20:00" /><span>20:00</span></label>
           </div>
         </div>
         <p class="fld-hint book-hint">Không bắt buộc — nếu bạn chọn, đội ngũ sẽ giữ lịch và gọi xác nhận. Showroom mở 9:00 – 21:00 hằng ngày.</p>
