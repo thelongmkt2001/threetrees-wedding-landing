@@ -153,7 +153,7 @@ body.drawer-open .nav .menu-btn span,body.drawer-open .nav.scrolled .menu-btn sp
 .drawer-foot{display:flex;flex-direction:column;align-items:center;gap:1rem;padding-top:1.4rem;border-top:1px solid var(--line-dark)}
 .drawer-foot .btn{width:100%}
 .drawer-phone{font-size:.95rem;letter-spacing:.05em;color:var(--gold-bright);font-weight:500}
-.drawer-addr{font-size:.56rem;letter-spacing:.2em;text-transform:uppercase;color:var(--bone-dim)}
+.drawer-addr{font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--bone-dim)}
 
 /* ---------- buttons ---------- */
 .btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:.6rem;font-family:var(--sans);font-weight:400;font-size:.66rem;letter-spacing:.2em;
@@ -542,7 +542,7 @@ body.form-active .mobile-bar{transform:translateY(105%);pointer-events:none}
   .hero-portrait img{object-position:64% 34%;filter:sepia(.42) saturate(1.35) brightness(1.07) contrast(1.02);animation:none}
   .hero::after{display:none}
   .hero-inner{padding:1.25rem var(--pad) 2.45rem;max-width:100%;background:linear-gradient(180deg,var(--ivory),var(--paper));box-shadow:0 -28px 44px -42px rgba(38,51,31,.6)}
-  .hero-kicker{margin-bottom:.55rem;font-size:.52rem;letter-spacing:.18em;line-height:1.45}
+  .hero-kicker{margin-bottom:.55rem;font-size:.62rem;letter-spacing:.16em;line-height:1.45}
   .hero-kicker::before{width:30px}
   .hero-title{font-size:clamp(1.95rem,7.4vw,2.5rem);line-height:1.1;max-width:none}
   .hero-lead{margin:.85rem 0 .95rem;max-width:100%;font-size:.9rem;line-height:1.55;color:var(--ink-soft)}
