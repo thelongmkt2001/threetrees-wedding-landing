@@ -384,7 +384,13 @@ section{position:relative;padding:8rem var(--pad)}
 .ap-phone{margin-top:1.6rem;font-family:var(--serif);font-style:italic;font-size:1.45rem;color:var(--gold-bright)}
 .appoint-form{display:flex;flex-direction:column;gap:1.4rem}
 .chips-label{font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-2);display:flex;align-items:center;gap:.6rem}
-.chips-count{display:inline-grid;place-items:center;min-width:1.55rem;height:1.55rem;border:1px solid var(--line-dark);border-radius:999px;color:var(--gold-bright);font-size:.66rem;font-weight:600}
+/* Chrome bám chữ vào lưới pixel nguyên nên số bị treo cao hơn tâm ~0.44px,
+   và không mức padding nào chạm được 0 — 0/0.5/1/1.5px cho ra y hệt nhau,
+   2px thì nhảy qua bên kia. Nên hạ vòng tròn xuống cho khớp chữ thay vì
+   ngược lại: viền vẽ được ở mức dưới pixel, chữ thì không.
+   Giữ letter-spacing thừa hưởng từ .chips-label — bỏ đi glyph lệch phải 0.6px. */
+.chips-count{position:relative;display:inline-grid;place-items:center;min-width:1.55rem;height:1.55rem;border-radius:999px;color:var(--gold-bright);font-size:.66rem;font-weight:600}
+.chips-count::before{content:"";position:absolute;inset:0;box-sizing:border-box;border:1px solid var(--line-dark);border-radius:999px;transform:translateY(-.44px)}
 .chips{display:flex;flex-wrap:wrap;gap:.5rem;min-height:44px;padding:.55rem 0;border-bottom:1px solid var(--line-dark-soft)}
 .chips.has-selection{padding:.75rem .8rem;border:1px solid var(--line-dark-soft);border-bottom-color:var(--line-dark-soft);border-radius:var(--radius);background:rgba(230,208,154,.07)}
 .chips .empty{color:var(--bone-dim);font-size:.85rem;font-weight:300}
@@ -404,8 +410,6 @@ section{position:relative;padding:8rem var(--pad)}
 .fld-err.show{display:block}
 .fld input.invalid,.fld textarea.invalid{border-color:#E8A98A}
 .submit-main{margin-top:.6rem}
-.form-promise{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem;margin-top:.2rem}
-.form-promise span{border-top:1px solid var(--line-dark-soft);padding:.72rem .2rem 0;color:var(--bone-dim);font-size:.58rem;letter-spacing:.08em;text-transform:uppercase;line-height:1.45;text-align:left}
 .form-note{font-size:.7rem;color:var(--bone-dim);margin-top:.2rem;text-align:center;font-weight:300}
 .form-done{text-align:center;padding:2rem 0;animation:fadeUp .8s var(--ease) both}
 .form-done .fd-gem{display:inline-block;color:var(--gold-2);font-size:1.5rem;margin-bottom:1.1rem}
@@ -725,8 +729,6 @@ body.form-active .mobile-bar{transform:translateY(105%);pointer-events:none}
   /* form nổi bật hơn trên mobile */
   #formInner{background:rgba(251,248,241,.045);border:1px solid var(--line-dark-soft);border-radius:var(--radius);padding:1.45rem 1.25rem;box-shadow:0 20px 50px -34px rgba(0,0,0,.42)}
   .appoint-intro h2{margin-bottom:1.2rem;font-size:clamp(2rem,7.4vw,2.6rem)}
-  .form-promise{grid-template-columns:1fr;gap:.5rem}
-  .form-promise span{text-align:left}
   .float-cart{bottom:84px;right:12px;padding:.8rem 1.1rem}
   .mobile-bar{display:flex;transform:translateY(0);pointer-events:auto}
   .mobile-bar a{letter-spacing:.1em;padding:.9rem .4rem}
