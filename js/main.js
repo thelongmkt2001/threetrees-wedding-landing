@@ -22,21 +22,21 @@
     {id:"memory-note", name:"Memory Note", metal:"Vàng trắng", essence:"Ký ức nhỏ làm nên tình yêu lớn", img:"assets/rings/memory-note.jpg",
      desc:"Bề mặt gồm những mặt cắt thủ công liên tiếp, mỗi mặt như một ký ức được lưu giữ. Khi ánh sáng chuyển động, từng góc nhẫn phản chiếu một sắc độ riêng."},
     {id:"imperfect-facets", name:"Imperfect Facets", metal:"Vàng hồng", essence:"Không hoàn hảo mà trọn vẹn", img:"assets/rings/imperfect-facets.jpg",
-     desc:"Những mặt cắt bất đối xứng khiến mỗi góc bắt sáng một kiểu riêng — như chính những điều không hoàn hảo lại làm nên một tình yêu trọn vẹn."},
+     desc:"Những mặt cắt bất đối xứng, mỗi góc bắt sáng một kiểu."},
     {id:"duong-van", name:"Đường Vân", metal:"Vàng 18K", essence:"Mọi trải nghiệm đều hội tụ", img:"assets/rings/duong-van.jpg",
-     desc:"Những đường vân chạm khắc thủ công cao thấp khác nhau nhưng cùng khép lại trong một vòng tròn — như mọi điều hai người đã cùng nhau bước qua."},
+     desc:"Đường vân chạm tay, cao thấp không đều, nhưng khép lại thành một vòng tròn liền mạch."},
     {id:"red-field", name:"Red Field", metal:"Vàng hồng · Kim cương", essence:"Khác biệt được tôn vinh", img:"assets/rings/red-field.jpg",
-     desc:"Cùng một khối vàng hồng và ngôn ngữ tạo hình, hai chiếc mang hai sắc thái qua kim cương trắng và kim cương đen — khác biệt không bị xóa bỏ mà được tôn vinh."},
-    {id:"the-bridge", name:"The Bridge", metal:"Vàng trắng", essence:"Nhịp cầu của sự đồng hành", img:"assets/rings/the-bridge.jpg",
-     desc:"Họa tiết trên thân nhẫn như những mắt nối liên tiếp, gợi nhắc một nhịp cầu bền vững — tình yêu tạo nên từ vô vàn lần chọn bước tiếp cùng nhau."},
+     desc:"Hai chiếc cùng một khối vàng hồng, cùng một dáng. Khác nhau ở đá: một chiếc kim cương trắng, một chiếc kim cương đen."},
+    {id:"the-bridge", name:"The Bridge", metal:"Vàng trắng", essence:"Điểm tựa để cùng bước qua", img:"assets/rings/the-bridge.jpg",
+     desc:"Thân nhẫn chạy một dải mắt nối liên tiếp, lấy từ kết cấu cây cầu. Cầu đứng được là nhờ từng mắt chịu lực cho nhau."},
     {id:"again-again", name:"Again & Again", metal:"Vàng hồng · Kim cương", essence:"Yêu thương lặp lại mỗi ngày", img:"assets/rings/again-again.jpg",
-     desc:"Dải kim cương nhỏ nối tiếp theo đường cong mềm mại, tượng trưng cho những khoảnh khắc yêu thương âm thầm mà bền bỉ, được nuôi dưỡng mỗi ngày."},
+     desc:"Dải kim cương nhỏ chạy theo đường cong thân nhẫn. Không viên nào nổi bật, cả dải mới thành hình."},
     {id:"chung-ta", name:"Chúng Ta Thuộc Về Nhau", metal:"Vàng trắng", essence:"Lời hứa chỉ hai người hiểu", img:"assets/rings/chung-ta.jpg",
      desc:"Bên ngoài tối giản, lời hứa được khắc kín bên trong thân nhẫn — không dành cho thế giới nhìn thấy, chỉ để mỗi ngày nhắc hai bạn vì sao đã chọn nhau."},
-    {id:"the-shape-of-us", name:"The Shape Of Us", metal:"Vàng trắng · Kim cương", essence:"Hai bản thể, một hành trình", img:"assets/rings/the-shape-of-us.jpg",
-     desc:"Cùng một ngôn ngữ thiết kế nhưng khác ở chi tiết: một chiếc tối giản, một chiếc điểm kim cương trên chính những đường nét ấy — mỗi người vẫn tỏa sáng theo cách riêng."},
+    {id:"the-shape-of-us", name:"The Shape Of Us", metal:"Vàng trắng · Kim cương", essence:"Nhận ra mình trong đối phương", img:"assets/rings/the-shape-of-us.jpg",
+     desc:"Cùng một dáng, khác ở chi tiết: một chiếc để trơn, một chiếc đính kim cương dọc theo đúng những đường nét ấy."},
     {id:"loi-ve", name:"ThreeTrees", metal:"Vàng hồng 18K · Kim cương", essence:"Không giống nhau nhưng mãi mãi thuộc về nhau", img:"assets/rings/loi-ve.jpg",
-     desc:"Một chiếc nở rộ bởi những viên kim cương như vòng hoa khoe sắc, chiếc còn lại tối giản và vững chãi — hai ngôn ngữ khác biệt cùng thuộc về một hành trình."}
+     desc:"Một chiếc nở rộ bởi những viên kim cương như vòng hoa đang khoe sắc. Chiếc còn lại tối giản và vững chãi, như mảnh đất nuôi cả khu vườn."}
   ];
 
   /* ---- loader ---- */
