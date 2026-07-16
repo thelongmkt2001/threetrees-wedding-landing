@@ -272,16 +272,38 @@
       const long = d => DOWS[d.getDay()] + ', ' + d.getDate() + '/' + (d.getMonth() + 1) + '/' + d.getFullYear();
       const monthStart = d => new Date(d.getFullYear(), d.getMonth(), 1);
 
-      /* Popup mặc định bám mép trái field và mở xuống. Panel lịch rộng hơn
-         field nên bám mép nào cũng có thể lòi ra ngoài màn hình — kẹp lại
-         theo viewport thay vì lật. Dọc thì chọn phía còn nhiều chỗ hơn. */
+      /* Mobile mở kiểu bottom sheet (CSS lo phần bày biện), desktop thì neo
+         vào field. Panel lịch rộng hơn chính field nên bám mép nào cũng có
+         thể lòi ra ngoài — kẹp theo viewport thay vì lật. Dọc chọn phía
+         còn nhiều chỗ hơn. */
+      const sheetMQ = window.matchMedia('(max-width:520px)');
+      let backdrop = null;
+      function showBackdrop(p) {
+        if (!backdrop) {
+          backdrop = document.createElement('button');
+          backdrop.type = 'button';
+          backdrop.className = 'pick-bd';
+          backdrop.setAttribute('aria-label', 'Đóng');
+          backdrop.addEventListener('click', () => pickers.forEach(o => close(o, true)));
+          document.body.appendChild(backdrop);
+        }
+        backdrop.hidden = false;
+        document.body.classList.add('sheet-open');
+      }
+      function hideBackdrop() {
+        if (backdrop) backdrop.hidden = true;
+        document.body.classList.remove('sheet-open');
+      }
+
       function open(p) {
         pickers.forEach(o => { if (o !== p) close(o); });
         p.panel.hidden = false;
-        p.panel.style.left = '0px';
+        p.panel.style.left = '';
         p.btn.setAttribute('aria-expanded', 'true');
         p.wrap.classList.remove('up');
         if (p.onOpen) p.onOpen();
+
+        if (sheetMQ.matches) { showBackdrop(p); return; }
 
         const r = p.wrap.getBoundingClientRect();
         const pw = p.panel.offsetWidth, ph = p.panel.offsetHeight;
@@ -299,6 +321,7 @@
         p.panel.hidden = true;
         p.btn.setAttribute('aria-expanded', 'false');
         p.btn.removeAttribute('aria-activedescendant');
+        if (!pickers.some(isOpen)) hideBackdrop();
         if (focusBtn) p.btn.focus();
       }
       const isOpen = p => !p.panel.hidden;
@@ -306,6 +329,8 @@
       document.addEventListener('click', e => {
         pickers.forEach(p => { if (!p.wrap.contains(e.target)) close(p); });
       });
+      // vượt ngưỡng sheet/popup khi đang mở thì kiểu bày biện đổi giữa chừng
+      sheetMQ.addEventListener('change', () => pickers.forEach(p => close(p)));
       document.addEventListener('keydown', e => {
         if (e.key === 'Escape') pickers.forEach(p => { if (isOpen(p)) close(p, true); });
       });
@@ -407,6 +432,10 @@
           { h: 'Buổi tối', v: [['18:00'], ['19:00'], ['20:00']] },
         ];
         const opts = [];
+        const grip = document.createElement('span');
+        grip.className = 'sheet-grip';
+        grip.setAttribute('aria-hidden', 'true');
+        list.appendChild(grip);
         GROUPS.forEach(g => {
           if (g.h) {
             const h = document.createElement('div');
