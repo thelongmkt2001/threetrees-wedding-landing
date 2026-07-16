@@ -110,7 +110,9 @@ picture{display:contents}
   padding:1.5rem var(--pad);transition:padding .6s var(--ease),background .6s var(--ease),box-shadow .6s var(--ease),top .6s var(--ease)}
 .nav.scrolled{top:0;padding:.9rem var(--pad);background:rgba(246,241,230,.88);backdrop-filter:blur(18px) saturate(1.1);box-shadow:0 1px 0 var(--line)}
 .wordmark{line-height:1}
-.wordmark b{font-family:var(--display);font-weight:500;font-size:1.42rem;letter-spacing:.2em;text-indent:.2em;text-transform:uppercase;color:var(--forest);transition:color .5s var(--ease)}
+/* "THREETREES" toàn chữ hoa nên dưới baseline là khoảng trống chân chữ bỏ không:
+   căn giữa theo hộp sẽ khiến mực chữ treo cao hơn tâm 0.17em. Đẩy xuống bù lại. */
+.wordmark b{display:block;transform:translateY(.126em);font-family:var(--display);font-weight:500;font-size:1.42rem;letter-spacing:.2em;text-indent:.2em;text-transform:uppercase;color:var(--forest);transition:color .5s var(--ease)}
 .nav-links{display:flex;gap:2.4rem;position:absolute;left:50%;transform:translateX(-50%)}
 .nav-links a{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft);position:relative;padding:.3rem 0;transition:color .4s}
 .nav-links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--gold-2);transition:width .45s var(--ease)}
