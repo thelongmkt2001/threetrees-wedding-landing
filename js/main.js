@@ -315,6 +315,15 @@
         const below = window.innerHeight - r.bottom - 8;
         const above = r.top - 8;
         if (ph > below && above > below) p.wrap.classList.add('up');
+
+        /* Field rộng thì lịch cũng rộng và cao theo — màn thấp (iPad ngang)
+           có thể không đủ chỗ cả trên lẫn dưới. Cuộn trang một nhịp cho
+           panel lọt hẳn vào, thay vì để nó thò ra ngoài. */
+        const pr = p.panel.getBoundingClientRect();
+        let dy = 0;
+        if (pr.bottom > window.innerHeight - 8) dy = pr.bottom - (window.innerHeight - 8);
+        if (pr.top - dy < 8) dy = pr.top - 8;
+        if (dy) window.scrollBy({ top: dy, behavior: 'instant' });
       }
       function close(p, focusBtn) {
         if (p.panel.hidden) return;
