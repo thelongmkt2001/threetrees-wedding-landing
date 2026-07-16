@@ -32,7 +32,7 @@
     {id:"again-again", name:"Again & Again", metal:"Vàng hồng · Kim cương", essence:"Yêu thương lặp lại mỗi ngày", img:"assets/rings/again-again.jpg",
      desc:"Dải kim cương nhỏ chạy theo đường cong thân nhẫn. Không viên nào nổi bật, cả dải mới thành hình."},
     {id:"chung-ta", name:"Chúng Ta Thuộc Về Nhau", metal:"Vàng trắng", essence:"Lời hứa chỉ hai người hiểu", img:"assets/rings/chung-ta.jpg",
-     desc:"Bên ngoài tối giản, lời hứa được khắc kín bên trong thân nhẫn — không dành cho thế giới nhìn thấy, chỉ để mỗi ngày nhắc hai bạn vì sao đã chọn nhau."},
+     desc:"Bên ngoài tối giản, lời hứa được khắc kín bên trong thân nhẫn. Không dành cho thế giới nhìn thấy, chỉ để mỗi ngày nhắc hai bạn vì sao đã chọn nhau."},
     {id:"the-shape-of-us", name:"The Shape Of Us", metal:"Vàng trắng · Kim cương", essence:"Nhận ra mình trong đối phương", img:"assets/rings/the-shape-of-us.jpg",
      desc:"Cùng một dáng, khác ở chi tiết: một chiếc để trơn, một chiếc đính kim cương dọc theo đúng những đường nét ấy."},
     {id:"loi-ve", name:"ThreeTrees", metal:"Vàng hồng 18K · Kim cương", essence:"Không giống nhau nhưng mãi mãi thuộc về nhau", img:"assets/rings/loi-ve.jpg",
@@ -435,7 +435,7 @@
         const out = document.getElementById('fTime');
         const list = tp.panel;
         const GROUPS = [
-          { h: '', v: [['', 'Linh hoạt — ThreeTrees gợi ý']] },
+          { h: '', v: [['', 'Linh hoạt, ThreeTrees gợi ý']] },
           { h: 'Buổi sáng', v: [['09:00'], ['10:00'], ['11:00']] },
           { h: 'Buổi chiều', v: [['14:00'], ['15:00'], ['16:00'], ['17:00']] },
           { h: 'Buổi tối', v: [['18:00'], ['19:00'], ['20:00']] },
