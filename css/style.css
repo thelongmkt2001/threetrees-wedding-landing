@@ -219,7 +219,7 @@ section{position:relative;padding:8rem var(--pad)}
 .manifesto-note{max-width:620px;margin:2.6rem auto 0;color:var(--ink-soft);font-size:1.02rem;line-height:1.9}
 .manifesto-sign{margin-top:2rem;font-family:var(--serif);font-style:italic;font-size:1.2rem;color:var(--gold-text)}
 
-/* ---------- spotlight "Lối Về" (jewel-box tối) ---------- */
+/* ---------- spotlight "ThreeTrees" (jewel-box tối) ---------- */
 .spot{position:relative;background:var(--forest-deep);color:var(--bone);padding:0;overflow:hidden;border-top:1px solid var(--line-dark);border-bottom:1px solid var(--line-dark);display:grid;grid-template-columns:1.05fr .95fr;align-items:stretch}
 .spot::before{content:"";position:absolute;top:50%;right:20%;width:64vmin;height:64vmin;transform:translateY(-50%);background:radial-gradient(circle,rgba(230,208,154,.13),transparent 62%);pointer-events:none;z-index:0}
 .spot-media{position:relative;margin:0;min-height:min(72vh,620px);overflow:hidden}

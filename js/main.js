@@ -35,7 +35,7 @@
      desc:"Bên ngoài tối giản, lời hứa được khắc kín bên trong thân nhẫn — không dành cho thế giới nhìn thấy, chỉ để mỗi ngày nhắc hai bạn vì sao đã chọn nhau."},
     {id:"the-shape-of-us", name:"The Shape Of Us", metal:"Vàng trắng · Kim cương", essence:"Hai bản thể, một hành trình", img:"assets/rings/the-shape-of-us.jpg",
      desc:"Cùng một ngôn ngữ thiết kế nhưng khác ở chi tiết: một chiếc tối giản, một chiếc điểm kim cương trên chính những đường nét ấy — mỗi người vẫn tỏa sáng theo cách riêng."},
-    {id:"loi-ve", name:"Lối Về", metal:"Vàng hồng 18K · Kim cương", essence:"Không giống nhau nhưng mãi mãi thuộc về nhau", img:"assets/rings/loi-ve.jpg",
+    {id:"loi-ve", name:"ThreeTrees", metal:"Vàng hồng 18K · Kim cương", essence:"Không giống nhau nhưng mãi mãi thuộc về nhau", img:"assets/rings/loi-ve.jpg",
      desc:"Một chiếc nở rộ bởi những viên kim cương như vòng hoa khoe sắc, chiếc còn lại tối giản và vững chãi — hai ngôn ngữ khác biệt cùng thuộc về một hành trình."}
   ];
 
