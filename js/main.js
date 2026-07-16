@@ -258,12 +258,208 @@
   /* ---- lead form ---- */
   const form = document.getElementById('leadForm');
   if (form) {
-    // không cho đặt lịch vào ngày đã qua
-    const dateInput = document.getElementById('fDate');
-    if (dateInput) {
-      const t = new Date(); t.setMinutes(t.getMinutes() - t.getTimezoneOffset());
-      dateInput.min = t.toISOString().slice(0, 10);
-    }
+    /* ---- ngày & giờ: lịch + list tự dựng ----
+       Popup của <select> và lịch của <input type=date> do OS vẽ, CSS không
+       với tới được nên luôn lạc tông. Dựng tay để ăn đúng brand và điều
+       khiển được mọi trạng thái. Giá trị thật nằm ở 2 hidden input. */
+    (function pickers() {
+      const pickers = [];
+      const DAY = 864e5;
+      const today = new Date(); today.setHours(0, 0, 0, 0);
+      const maxDate = new Date(today.getTime()); maxDate.setMonth(maxDate.getMonth() + 6);
+      const DOWS = ['Chủ nhật', 'Thứ hai', 'Thứ ba', 'Thứ tư', 'Thứ năm', 'Thứ sáu', 'Thứ bảy'];
+      const iso = d => d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+      const long = d => DOWS[d.getDay()] + ', ' + d.getDate() + '/' + (d.getMonth() + 1) + '/' + d.getFullYear();
+      const monthStart = d => new Date(d.getFullYear(), d.getMonth(), 1);
+
+      /* Popup mặc định bám mép trái field và mở xuống. Panel lịch rộng hơn
+         field nên bám mép nào cũng có thể lòi ra ngoài màn hình — kẹp lại
+         theo viewport thay vì lật. Dọc thì chọn phía còn nhiều chỗ hơn. */
+      function open(p) {
+        pickers.forEach(o => { if (o !== p) close(o); });
+        p.panel.hidden = false;
+        p.panel.style.left = '0px';
+        p.btn.setAttribute('aria-expanded', 'true');
+        p.wrap.classList.remove('up');
+        if (p.onOpen) p.onOpen();
+
+        const r = p.wrap.getBoundingClientRect();
+        const pw = p.panel.offsetWidth, ph = p.panel.offsetHeight;
+        let dx = 0;
+        if (r.left + pw > window.innerWidth - 8) dx = window.innerWidth - 8 - (r.left + pw);
+        if (r.left + dx < 8) dx = 8 - r.left;
+        p.panel.style.left = dx + 'px';
+
+        const below = window.innerHeight - r.bottom - 8;
+        const above = r.top - 8;
+        if (ph > below && above > below) p.wrap.classList.add('up');
+      }
+      function close(p, focusBtn) {
+        if (p.panel.hidden) return;
+        p.panel.hidden = true;
+        p.btn.setAttribute('aria-expanded', 'false');
+        p.btn.removeAttribute('aria-activedescendant');
+        if (focusBtn) p.btn.focus();
+      }
+      const isOpen = p => !p.panel.hidden;
+
+      document.addEventListener('click', e => {
+        pickers.forEach(p => { if (!p.wrap.contains(e.target)) close(p); });
+      });
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') pickers.forEach(p => { if (isOpen(p)) close(p, true); });
+      });
+
+      /* ================= lịch ================= */
+      const dWrap = document.getElementById('datePick');
+      if (dWrap) {
+        const dp = {
+          wrap: dWrap, btn: document.getElementById('dateBtn'), panel: document.getElementById('calPanel'),
+          onOpen: () => { view = monthStart(sel || today); focus = sel || today; render(); focusCell(); },
+        };
+        pickers.push(dp);
+        const val = document.getElementById('dateVal');
+        const out = document.getElementById('fDate');
+        const grid = document.getElementById('calGrid');
+        const title = document.getElementById('calTitle');
+        const prev = document.getElementById('calPrev');
+        const next = document.getElementById('calNext');
+        let view = monthStart(today), sel = null, focus = today;
+
+        function render() {
+          title.textContent = 'Tháng ' + (view.getMonth() + 1) + ' · ' + view.getFullYear();
+          grid.textContent = '';
+          const first = new Date(view.getFullYear(), view.getMonth(), 1);
+          const pad = (first.getDay() + 6) % 7; // tuần bắt đầu từ thứ 2
+          const days = new Date(view.getFullYear(), view.getMonth() + 1, 0).getDate();
+          for (let i = 0; i < pad; i++) {
+            const b = document.createElement('button');
+            b.type = 'button'; b.className = 'cal-d pad'; b.disabled = true; b.tabIndex = -1;
+            b.setAttribute('aria-hidden', 'true');
+            grid.appendChild(b);
+          }
+          for (let d = 1; d <= days; d++) {
+            const dt = new Date(view.getFullYear(), view.getMonth(), d);
+            const b = document.createElement('button');
+            b.type = 'button'; b.className = 'cal-d'; b.textContent = d;
+            b.disabled = dt < today || dt > maxDate;
+            b.tabIndex = (+dt === +focus) ? 0 : -1;
+            b.dataset.d = iso(dt);
+            b.setAttribute('aria-label', long(dt));
+            if (+dt === +today) b.classList.add('today');
+            if (sel && +dt === +sel) { b.classList.add('sel'); b.setAttribute('aria-current', 'date'); }
+            b.addEventListener('click', () => choose(dt));
+            grid.appendChild(b);
+          }
+          prev.disabled = view <= monthStart(today);
+          next.disabled = view >= monthStart(maxDate);
+        }
+        function focusCell() {
+          const c = grid.querySelector('.cal-d[tabindex="0"]:not(:disabled)') || grid.querySelector('.cal-d:not(:disabled)');
+          if (c) c.focus();
+        }
+        function choose(dt) {
+          sel = dt;
+          out.value = iso(dt);
+          val.textContent = long(dt);
+          val.classList.remove('empty');
+          close(dp, true);
+        }
+        function clear() {
+          sel = null; out.value = '';
+          val.textContent = 'Chọn ngày'; val.classList.add('empty');
+          close(dp, true);
+        }
+
+        dp.btn.addEventListener('click', () => isOpen(dp) ? close(dp) : open(dp));
+        prev.addEventListener('click', () => { view = new Date(view.getFullYear(), view.getMonth() - 1, 1); render(); });
+        next.addEventListener('click', () => { view = new Date(view.getFullYear(), view.getMonth() + 1, 1); render(); });
+        document.getElementById('calClear').addEventListener('click', clear);
+        document.getElementById('calSoon').addEventListener('click', () => {
+          // sớm nhất = mai, cho đội ngũ kịp gọi xác nhận
+          choose(new Date(today.getTime() + DAY));
+        });
+        grid.addEventListener('keydown', e => {
+          const step = { ArrowLeft: -1, ArrowRight: 1, ArrowUp: -7, ArrowDown: 7 }[e.key];
+          if (!step) return;
+          e.preventDefault();
+          const nd = new Date(focus.getTime() + step * DAY); nd.setHours(0, 0, 0, 0);
+          if (nd < today || nd > maxDate) return;
+          focus = nd;
+          if (nd.getMonth() !== view.getMonth() || nd.getFullYear() !== view.getFullYear()) view = monthStart(nd);
+          render(); focusCell();
+        });
+        render();
+      }
+
+      /* ================= list giờ ================= */
+      const tWrap = document.getElementById('timePick');
+      if (tWrap) {
+        const tp = { wrap: tWrap, btn: document.getElementById('timeBtn'), panel: document.getElementById('timeList') };
+        pickers.push(tp);
+        const val = document.getElementById('timeVal');
+        const out = document.getElementById('fTime');
+        const list = tp.panel;
+        const GROUPS = [
+          { h: '', v: [['', 'Linh hoạt — ThreeTrees gợi ý']] },
+          { h: 'Buổi sáng', v: [['09:00'], ['10:00'], ['11:00']] },
+          { h: 'Buổi chiều', v: [['14:00'], ['15:00'], ['16:00'], ['17:00']] },
+          { h: 'Buổi tối', v: [['18:00'], ['19:00'], ['20:00']] },
+        ];
+        const opts = [];
+        GROUPS.forEach(g => {
+          if (g.h) {
+            const h = document.createElement('div');
+            h.className = 'tgrp-h'; h.textContent = g.h; h.setAttribute('aria-hidden', 'true');
+            list.appendChild(h);
+          }
+          g.v.forEach(([v, label]) => {
+            const o = document.createElement('div');
+            o.className = 'tli'; o.id = 'topt-' + (v ? v.replace(':', '') : 'any');
+            o.setAttribute('role', 'option'); o.setAttribute('aria-selected', 'false');
+            o.dataset.v = v;
+            o.innerHTML = '<span></span><span class="tck" aria-hidden="true">◆</span>';
+            o.firstChild.textContent = label || v;
+            o.addEventListener('click', () => pick(v));
+            list.appendChild(o); opts.push(o);
+          });
+        });
+        let cur = -1;
+
+        function pick(v) {
+          out.value = v;
+          val.textContent = v || 'Linh hoạt';
+          val.classList.toggle('empty', !v);
+          opts.forEach(o => o.setAttribute('aria-selected', String(o.dataset.v === v)));
+          close(tp, true);
+        }
+        function setCur(i) {
+          opts.forEach(o => o.classList.remove('cursor'));
+          cur = Math.max(0, Math.min(i, opts.length - 1));
+          opts[cur].classList.add('cursor');
+          tp.btn.setAttribute('aria-activedescendant', opts[cur].id);
+          opts[cur].scrollIntoView({ block: 'nearest' });
+        }
+        tp.onOpen = () => {
+          const i = opts.findIndex(o => o.getAttribute('aria-selected') === 'true');
+          setCur(i < 0 ? 0 : i);
+        };
+
+        tp.btn.addEventListener('click', () => isOpen(tp) ? close(tp) : open(tp));
+        tp.btn.addEventListener('keydown', e => {
+          if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+            e.preventDefault();
+            if (!isOpen(tp)) { open(tp); return; }
+            setCur(cur + (e.key === 'ArrowDown' ? 1 : -1));
+          } else if (e.key === 'Home' && isOpen(tp)) { e.preventDefault(); setCur(0); }
+          else if (e.key === 'End' && isOpen(tp)) { e.preventDefault(); setCur(opts.length - 1); }
+          else if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            if (isOpen(tp) && cur >= 0) pick(opts[cur].dataset.v); else open(tp);
+          }
+        });
+      }
+    })();
     form.addEventListener('focusin', () => document.body.classList.add('form-active'));
     form.addEventListener('focusout', () => {
       setTimeout(() => {
@@ -282,7 +478,7 @@
       const nameEl = document.getElementById('fName');
       const phoneEl = document.getElementById('fPhone');
       const dateEl = document.getElementById('fDate');
-      const timeEl = form.querySelector('input[name="gio_hen"]:checked');
+      const timeEl = document.getElementById('fTime');
       const name = nameEl.value.trim();
       const phone = phoneEl.value.trim();
       const nameValid = !!name;
