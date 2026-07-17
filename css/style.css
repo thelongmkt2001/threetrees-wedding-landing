@@ -109,10 +109,13 @@ picture{display:contents}
 .nav{position:fixed;top:33px;left:0;width:100%;z-index:200;display:flex;align-items:center;justify-content:space-between;
   padding:1.5rem var(--pad);transition:padding .6s var(--ease),background .6s var(--ease),box-shadow .6s var(--ease),top .6s var(--ease)}
 .nav.scrolled{top:0;padding:.9rem var(--pad);background:rgba(246,241,230,.88);backdrop-filter:blur(18px) saturate(1.1);box-shadow:0 1px 0 var(--line)}
-.wordmark{line-height:1}
-/* "THREETREES" toàn chữ hoa nên dưới baseline là khoảng trống chân chữ bỏ không:
-   căn giữa theo hộp sẽ khiến mực chữ treo cao hơn tâm 0.17em. Đẩy xuống bù lại. */
-.wordmark b{display:block;transform:translateY(.126em);font-family:var(--display);font-weight:500;font-size:1.42rem;letter-spacing:.2em;text-indent:.2em;text-transform:uppercase;color:var(--forest);transition:color .5s var(--ease)}
+.wordmark{display:flex;line-height:1}
+/* Logo là ảnh đơn sắc dùng làm mask: màu do background-color quyết định, nên
+   đổi được theo nền (nav sáng → xanh brand, drawer nền tối → sáng) y như chữ cũ. */
+.wordmark-logo{display:block;height:54px;aspect-ratio:491/420;background-color:#66683f;
+  -webkit-mask:url(../assets/img/logo-mark.png) center/contain no-repeat;
+  mask:url(../assets/img/logo-mark.png) center/contain no-repeat;
+  transition:height .6s var(--ease),background-color .5s var(--ease)}
 .nav-links{display:flex;gap:2.4rem;position:absolute;left:50%;transform:translateX(-50%)}
 .nav-links a{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft);position:relative;padding:.3rem 0;transition:color .4s}
 .nav-links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--gold-2);transition:width .45s var(--ease)}
@@ -127,7 +130,7 @@ picture{display:contents}
 .menu-btn.open span:nth-child(2){opacity:0}
 .menu-btn.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
 /* scrolled → nav over light background: switch to dark ink */
-.nav.scrolled .wordmark b{color:var(--forest)}
+.nav.scrolled .wordmark-logo{height:44px}
 .nav.scrolled .nav-links a{color:var(--ink-soft)}
 .nav.scrolled .nav-links a:hover{color:var(--gold)}
 .nav.scrolled .nav-phone{color:var(--forest)}
@@ -140,7 +143,7 @@ picture{display:contents}
 /* nav sits above the drawer (z200 > z150): drop the duplicate brand inside the drawer
    and let the nav blend into the dark panel instead of cutting a light band across it */
 body.drawer-open .nav,body.drawer-open .nav.scrolled{background:transparent;backdrop-filter:none;box-shadow:none;top:0}
-body.drawer-open .nav .wordmark b,body.drawer-open .nav.scrolled .wordmark b{color:var(--bone)}
+body.drawer-open .nav .wordmark-logo,body.drawer-open .nav.scrolled .wordmark-logo{background-color:var(--bone)}
 body.drawer-open .nav .menu-btn span,body.drawer-open .nav.scrolled .menu-btn span{background:var(--bone)}
 .drawer-top{display:none}
 .drawer-brand b{font-family:var(--display);font-weight:500;font-size:1.3rem;letter-spacing:.2em;text-indent:.2em;text-transform:uppercase;color:var(--bone);display:block}
@@ -651,7 +654,8 @@ body.form-active .mobile-bar{transform:translateY(105%);pointer-events:none}
   /* hero là banner ảnh ngay dưới nav → cần lớp mờ để wordmark tối vẫn đọc được */
   .nav{padding:1.1rem var(--pad);background:linear-gradient(180deg,rgba(246,241,230,.96),rgba(246,241,230,.72) 58%,transparent)}
   .nav.scrolled{padding:.8rem var(--pad)}
-  .wordmark b{font-size:1.24rem}
+  .wordmark-logo{height:46px}
+  .nav.scrolled .wordmark-logo{height:40px}
   .nav-appoint,.nav-phone{display:none}
   .hero{display:block;min-height:auto;padding:0;background:var(--ivory);overflow:visible}
   .hero-portrait{position:relative;width:100%;height:34svh;min-height:250px;top:auto;bottom:auto;-webkit-mask-image:none;mask-image:none;overflow:hidden}
